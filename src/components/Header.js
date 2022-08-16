@@ -1,11 +1,10 @@
-import Link from 'next/link';
+import Moveback from '../components/moveback-button/moveback-button';
 
 export default function Header() {
 	return (
 		<header>
 			<nav>
-				<Link href="/">Home</Link>
-				<Link href="/about">About me</Link>
+				<Moveback></Moveback>
 			</nav>
 		</header>
 	);
