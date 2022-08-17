@@ -1,7 +1,7 @@
 import Head from 'next/head';
 
 import Layout from '../components/Layout';
-import Timer from '../components/timer/timer';
+import Timer from '../components/timer/timer1';
 
 export default function HomePage() {
 	return (

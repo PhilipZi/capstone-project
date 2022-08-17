@@ -1,13 +1,17 @@
 import {useEffect} from 'react';
 import {useState} from 'react';
 
+import RangeBar from './rangebar';
 import Times from './times';
 
 export default function Timer() {
+	const [minutes, setMinutes] = useState(0);
+	const [second, setSecond] = useState(0);
+
 	const [thirtysec, setThirtysec] = useState(1);
 	const [onemin, setOnemin] = useState(5);
 	const [fivemin, setFivemin] = useState(20);
-	const [seconds, setSecond] = useState(0);
+	const [seconds, setSeconds] = useState(0);
 	const [stage, setStage] = useState(0);
 	const [ticking, setTicking] = useState(false);
 
@@ -41,7 +45,7 @@ export default function Timer() {
 			alert('Time up');
 		} else if (seconds === 0) {
 			setMinutes(minute => minute - 1);
-			setSecond(59);
+			setSeconds(59);
 		} else {
 			setSecond(second => second - 1);
 		}
@@ -57,7 +61,7 @@ export default function Timer() {
 		return () => {
 			clearInterval(timer);
 		};
-	}, [seconds, thirtysec, onemin, fivemin, ticking]);
+	}, [second, thirtysec, onemin, fivemin, ticking]);
 
 	return (
 		<div>
@@ -69,6 +73,10 @@ export default function Timer() {
 				ticking={ticking}
 				setTicking={setTicking}
 			/>
+			{minutes.toString().padStart(2, '0')}
+			<RangeBar value={minutes} setValue={setMinutes} name="minutes" />
+			{second.toString().padStart(2, '0')}
+			<RangeBar value={second} setValue={setSecond} name="second" />
 		</div>
 	);
 }
