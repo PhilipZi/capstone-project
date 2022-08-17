@@ -1,13 +1,13 @@
 import {nanoid} from 'nanoid';
-import Image from 'next/image';
 import {useState} from 'react';
 
+import CheckMark from '../../../public/Icons/checkMark';
 import useStore from '../../hooks/useStore';
 
 import RangeBar from './rangebar';
 import Times from './times1';
 
-export default function Timer({confirmCircel}) {
+export default function Timer() {
 	const [minutes, setMinutes] = useState(0);
 	const [seconds, setSeconds] = useState(0);
 	const times = useStore(state => state.times);
@@ -34,11 +34,11 @@ export default function Timer({confirmCircel}) {
 			<RangeBar value={minutes} setValue={setMinutes} name="minutes" />
 			<label>sec</label>
 			<RangeBar value={seconds} setValue={setSeconds} name="seconds" />
-
-			<button>
-				<Image src={confirmCircel} alt="" />
-			</button>
-
+			<div>
+				<button>
+					<CheckMark />
+				</button>
+			</div>
 			<ul>
 				{times?.map(time => {
 					return (

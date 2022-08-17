@@ -1,8 +1,8 @@
-const confirmCircel = () => {
+const CheckMark = () => {
 	return (
 		<svg
-			width="66"
-			height="66"
+			width="32"
+			height="32"
 			viewBox="0 0 66 66"
 			fill="none"
 			xmlns="http://www.w3.org/2000/svg"
@@ -25,4 +25,4 @@ const confirmCircel = () => {
 	);
 };
 
-export default confirmCircel;
+export default CheckMark;

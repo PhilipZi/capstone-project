@@ -1,17 +1,21 @@
 import Head from 'next/head';
 
+import BlackArrowDown from '../../public/Icons/blackArrowDown';
+import ExerciseButton from '../components/exerciseButton/exerciseButton';
 import Layout from '../components/Layout';
-import Timer from '../components/timer/timer1';
 
 export default function HomePage() {
 	return (
 		<Layout>
 			<Head>
-				<title key="title">My Project</title>
+				<title key="title">Timekeeper</title>
 				<meta key="description" name="description" content="This is my project" />
 			</Head>
+
+			<p>click this button to configurate your time</p>
+			<BlackArrowDown></BlackArrowDown>
 			<div>
-				<Timer />
+				<ExerciseButton />
 			</div>
 		</Layout>
 	);
