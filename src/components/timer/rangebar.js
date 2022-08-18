@@ -1,7 +1,9 @@
+import StyledInputRange from './styledInputRange';
+
 export default function RangeBar({value, setValue, name}) {
 	return (
 		<>
-			<input
+			<StyledInputRange
 				type="range"
 				id={name}
 				name={name}

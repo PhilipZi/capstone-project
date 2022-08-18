@@ -12,7 +12,11 @@ export const GlobalStyle = createGlobalStyle`
 	}
 
 	body {
+		height: 100%;
 		margin: 0;
 		font-size: 1rem;
+	}
+	main{
+		height: 100vh;
 	}
 `;

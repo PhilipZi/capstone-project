@@ -3,6 +3,8 @@ import Head from 'next/head';
 import Layout from '../components/Layout';
 import Timer from '../components/timer/timer1';
 
+import StyledExercisePage from './styledExercisePage';
+
 export default function ExercisePage() {
 	return (
 		<Layout>
@@ -10,9 +12,9 @@ export default function ExercisePage() {
 				<title key="title">Exercise Configurator</title>
 				<meta key="description" name="description" content="time configurator" />
 			</Head>
-			<div>
+			<StyledExercisePage>
 				<Timer />
-			</div>
+			</StyledExercisePage>
 		</Layout>
 	);
 }
