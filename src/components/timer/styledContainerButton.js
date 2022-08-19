@@ -7,6 +7,7 @@ const StyledContainerButton = styled.div`
 	justify-content: end;
 	width: 300px;
 	height: 200px;
+	border: 2px solid black;
 `;
 
 export default StyledContainerButton;

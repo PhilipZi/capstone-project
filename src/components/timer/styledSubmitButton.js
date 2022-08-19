@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 const StyledSubmitButton = styled.button`
 	border: none;
-	background-color: transparent;
+	background-color: red;
 	cursor: pointer;
 `;
 

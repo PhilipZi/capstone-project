@@ -56,6 +56,6 @@ export const GlobalStyle = createGlobalStyle`
 		font-size: 1rem;
 	}
 	main{
-		height: 100vh;
+		min-height: 100%;
 	}
 `;

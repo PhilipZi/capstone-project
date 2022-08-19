@@ -55,7 +55,12 @@ export default function Timer() {
 			</StyledBackArrowButton>
 		);
 	}
-
+	function handleMinutes(event) {
+		setMinutes(Number(event.target.value));
+	}
+	function handleSeconds(event) {
+		setSeconds(Number(event.target.value));
+	}
 	return (
 		<>
 			<StyledHeader>
@@ -68,8 +73,8 @@ export default function Timer() {
 			<StyledForm onSubmit={handleSubmit}>
 				<Times minutes={minutes} seconds={seconds} />
 				<div>
-					<RangeBar id="min" value={minutes} setValue={setMinutes} name="minutes" />
-					<RangeBar id="sec" value={seconds} setValue={setSeconds} name="seconds" />
+					<RangeBar id="min" value={minutes} onChange={handleMinutes} name="minutes" />
+					<RangeBar id="sec" value={seconds} onChange={handleSeconds} name="seconds" />
 				</div>
 				<SubmitButton />
 			</StyledForm>

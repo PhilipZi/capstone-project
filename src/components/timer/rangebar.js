@@ -1,6 +1,6 @@
 import StyledInputRange from './styledInputRange';
 
-export default function RangeBar({value, setValue, name}) {
+export default function RangeBar({value, onChange, name}) {
 	return (
 		<StyledInputRange
 			type="range"
@@ -9,9 +9,7 @@ export default function RangeBar({value, setValue, name}) {
 			min="00"
 			max="59"
 			value={value}
-			onChange={event => {
-				setValue(Number(event.target.value));
-			}}
+			onChange={onChange}
 		/>
 	);
 }
