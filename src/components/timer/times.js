@@ -1,25 +1,17 @@
-export default function Times({switchStage, getTickingTime, seconds, ticking, setTicking}) {
-	const options = ['1min', '5min', '20min'];
+import styled from 'styled-components';
 
+const StyledH1 = styled.h1`
+	font-size: 1.5cm;
+`;
+
+export default function Times({minutes, seconds}) {
 	return (
 		<>
 			<div>
-				{options.map((option, index) => {
-					return (
-						<h1 key={index} onClick={() => switchStage(index)}>
-							{option}
-						</h1>
-					);
-				})}
+				<StyledH1>
+					{minutes.toString().padStart(2, '0')}:{seconds.toString().padStart(2, '0')}
+				</StyledH1>
 			</div>
-			<div>
-				<h1>
-					{getTickingTime()}:{seconds.toString().padStart(2, '0')}
-				</h1>
-			</div>
-			<button onClick={() => setTicking(ticking => !ticking)}>
-				{ticking ? 'Stop' : 'Start'}
-			</button>
 		</>
 	);
 }

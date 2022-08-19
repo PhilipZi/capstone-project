@@ -1,7 +1,7 @@
 import Head from 'next/head';
 
 import Layout from '../components/Layout';
-import Timer from '../components/timer/timer1';
+import Timer from '../components/timer/timer';
 
 import StyledExercisePage from './styledExercisePage';
 

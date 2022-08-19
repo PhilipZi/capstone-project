@@ -1,82 +1,81 @@
-import {useEffect} from 'react';
+import {nanoid} from 'nanoid';
+import {useRouter} from 'next/router';
 import {useState} from 'react';
 
+import BackArrow from '../../../public/Icons/backArrow';
+import CheckMark from '../../../public/Icons/checkMark';
+import PlayButton from '../../../public/Icons/playButton';
+import useStore from '../../hooks/useStore';
+
 import RangeBar from './rangebar';
+import StyledBackArrowButton from './styledBackArrowButton';
+import StyledContainerButton from './styledContainerButton';
+import StyledDivRangeBar from './styledDivRangeBar';
+import StyledForm from './styledForm';
+import StyledH1 from './styledH1';
+import StyledHeader from './styledHeader';
+import StyledSubmitButton from './styledSubmitButton';
 import Times from './times';
 
 export default function Timer() {
 	const [minutes, setMinutes] = useState(0);
-	const [second, setSecond] = useState(0);
-
-	const [thirtysec, setThirtysec] = useState(1);
-	const [onemin, setOnemin] = useState(5);
-	const [fivemin, setFivemin] = useState(20);
 	const [seconds, setSeconds] = useState(0);
-	const [stage, setStage] = useState(0);
-	const [ticking, setTicking] = useState(false);
 
-	const switchStage = index => {
-		setStage(index);
-	};
+	const addTime = useStore(state => state.addTime);
 
-	const getTickingTime = () => {
-		const timeStage = {
-			0: thirtysec,
-			1: onemin,
-			2: fivemin,
+	function handleSubmit(event) {
+		event.preventDefault();
+		const timeMin = Number.parseInt(event.target.minutes.value);
+		const timeSec = Number.parseInt(event.target.seconds.value);
+
+		const timeObj = {
+			id: nanoid(),
+			minutes: timeMin,
+			seconds: timeSec,
 		};
-		return timeStage[stage];
-	};
+		addTime(timeObj);
+		console.log(timeObj);
+	}
 
-	const updateMinute = () => {
-		const updateStage = {
-			0: setThirtysec,
-			1: setOnemin,
-			2: setFivemin,
-		};
-		return updateStage[stage];
-	};
+	function SubmitButton() {
+		const router = useRouter();
+		return (
+			<StyledContainerButton>
+				<StyledSubmitButton onClick={() => router.back()}>
+					<CheckMark />
+				</StyledSubmitButton>
+			</StyledContainerButton>
+		);
+	}
 
-	const clockTicking = () => {
-		const minutes = getTickingTime();
-		const setMinutes = updateMinute();
-
-		if (minutes === 0 && seconds === 0) {
-			alert('Time up');
-		} else if (seconds === 0) {
-			setMinutes(minute => minute - 1);
-			setSeconds(59);
-		} else {
-			setSecond(second => second - 1);
-		}
-	};
-
-	useEffect(() => {
-		const timer = setInterval(() => {
-			if (ticking) {
-				clockTicking();
-			}
-		}, 1000);
-
-		return () => {
-			clearInterval(timer);
-		};
-	}, [second, thirtysec, onemin, fivemin, ticking]);
+	function MovebackHome() {
+		const router = useRouter();
+		return (
+			<StyledBackArrowButton onClick={() => router.back()}>
+				<BackArrow />
+			</StyledBackArrowButton>
+		);
+	}
 
 	return (
-		<div>
-			<Times
-				stage={stage}
-				switchStage={switchStage}
-				getTickingTime={getTickingTime}
-				seconds={seconds}
-				ticking={ticking}
-				setTicking={setTicking}
-			/>
-			{minutes.toString().padStart(2, '0')}
-			<RangeBar value={minutes} setValue={setMinutes} name="minutes" />
-			{second.toString().padStart(2, '0')}
-			<RangeBar value={second} setValue={setSecond} name="second" />
-		</div>
+		<>
+			<StyledHeader>
+				<StyledH1>
+					<PlayButton /> Exercise
+				</StyledH1>
+			</StyledHeader>
+			<MovebackHome></MovebackHome>
+
+			<StyledForm onSubmit={handleSubmit}>
+				<Times minutes={minutes} seconds={seconds} />
+				<StyledDivRangeBar>
+					<RangeBar id="min" value={minutes} setValue={setMinutes} name="minutes" />
+					<RangeBar id="sec" value={seconds} setValue={setSeconds} name="seconds" />
+				</StyledDivRangeBar>
+				<div>
+					<SubmitButton />
+				</div>
+			</StyledForm>
+		</>
 	);
 }
