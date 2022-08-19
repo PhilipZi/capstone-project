@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-import PlayButton from '../../../public/Icons/playButton';
+import PlayIcon from '../../../public/Icons/playButton';
 import useStore from '../../hooks/useStore';
 
 import StyledButton from './styledButton';
@@ -16,7 +16,7 @@ export default function ExerciseButton() {
 		<StyledButton>
 			<Link href="/exercisePage">
 				<StyledDiv>
-					<PlayButton />
+					<PlayIcon />
 					<p>Exercise</p>
 					{lastTime ? (
 						<a key={lastTime.id}>

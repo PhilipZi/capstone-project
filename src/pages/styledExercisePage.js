@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 const StyledExercisePage = styled.div`
-	height: 100%;
+	height: 100vh;
 	background-color: #acebaa;
 `;
 export default StyledExercisePage;

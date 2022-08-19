@@ -1,4 +1,4 @@
-const PlayButton = () => {
+const PlayIcon = () => {
 	return (
 		<svg
 			width="25"
@@ -18,4 +18,4 @@ const PlayButton = () => {
 	);
 };
 
-export default PlayButton;
+export default PlayIcon;
