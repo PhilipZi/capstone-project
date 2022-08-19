@@ -6,12 +6,8 @@ const StyledH1 = styled.h1`
 
 export default function Times({minutes, seconds}) {
 	return (
-		<>
-			<div>
-				<StyledH1>
-					{minutes.toString().padStart(2, '0')}:{seconds.toString().padStart(2, '0')}
-				</StyledH1>
-			</div>
-		</>
+		<StyledH1>
+			{minutes.toString().padStart(2, '0')}:{seconds.toString().padStart(2, '0')}
+		</StyledH1>
 	);
 }

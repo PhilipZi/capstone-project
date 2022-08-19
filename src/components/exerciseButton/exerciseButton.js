@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-import PlayIcon from '../../../public/Icons/playButton';
+import PlayIcon from '../../../public/Icons/playIcon';
 import useStore from '../../hooks/useStore';
 
 import StyledButton from './styledButton';
@@ -8,7 +8,6 @@ import StyledDiv from './styledDiv';
 
 export default function ExerciseButton() {
 	const times = useStore(state => state.times);
-	console.log(times);
 	const length = times.length;
 	const lastTime = times[length - 1];
 

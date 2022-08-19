@@ -4,13 +4,12 @@ import {useState} from 'react';
 
 import BackArrow from '../../../public/Icons/backArrow';
 import CheckMark from '../../../public/Icons/checkMark';
-import PlayButton from '../../../public/Icons/playButton';
+import PlayButton from '../../../public/Icons/playIcon';
 import useStore from '../../hooks/useStore';
 
 import RangeBar from './rangebar';
 import StyledBackArrowButton from './styledBackArrowButton';
 import StyledContainerButton from './styledContainerButton';
-import StyledDivRangeBar from './styledDivRangeBar';
 import StyledForm from './styledForm';
 import StyledH1 from './styledH1';
 import StyledHeader from './styledHeader';
@@ -22,6 +21,7 @@ export default function Timer() {
 	const [seconds, setSeconds] = useState(0);
 
 	const addTime = useStore(state => state.addTime);
+	const router = useRouter();
 
 	function handleSubmit(event) {
 		event.preventDefault();
@@ -34,14 +34,13 @@ export default function Timer() {
 			seconds: timeSec,
 		};
 		addTime(timeObj);
-		console.log(timeObj);
+		router.back();
 	}
 
 	function SubmitButton() {
-		const router = useRouter();
 		return (
 			<StyledContainerButton>
-				<StyledSubmitButton onClick={() => router.back()}>
+				<StyledSubmitButton>
 					<CheckMark />
 				</StyledSubmitButton>
 			</StyledContainerButton>
@@ -64,17 +63,15 @@ export default function Timer() {
 					<PlayButton /> Exercise
 				</StyledH1>
 			</StyledHeader>
-			<MovebackHome></MovebackHome>
+			<MovebackHome />
 
 			<StyledForm onSubmit={handleSubmit}>
 				<Times minutes={minutes} seconds={seconds} />
-				<StyledDivRangeBar>
+				<div>
 					<RangeBar id="min" value={minutes} setValue={setMinutes} name="minutes" />
 					<RangeBar id="sec" value={seconds} setValue={setSeconds} name="seconds" />
-				</StyledDivRangeBar>
-				<div>
-					<SubmitButton />
 				</div>
+				<SubmitButton />
 			</StyledForm>
 		</>
 	);
