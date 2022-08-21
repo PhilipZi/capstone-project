@@ -4,7 +4,7 @@ import BlackArrowDown from '../../public/Icons/blackArrowDown';
 import ExerciseButton from '../components/exerciseButton/exerciseButton';
 import Layout from '../components/Layout';
 
-import StyledCards from './styledExerciseCard';
+import StyledCards from './styledcomponents/styledCards';
 
 export default function HomePage() {
 	return (
@@ -14,11 +14,9 @@ export default function HomePage() {
 				<meta key="description" name="description" content="This is my project" />
 			</Head>
 			<StyledCards>
-				<p>click this button to configurate your time</p>
+				<p>click these buttons to configurate your setup</p>
 				<BlackArrowDown></BlackArrowDown>
-				<div>
-					<ExerciseButton />
-				</div>
+				<ExerciseButton />
 			</StyledCards>
 		</Layout>
 	);

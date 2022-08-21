@@ -3,17 +3,17 @@ import Link from 'next/link';
 import PlayIcon from '../../../public/Icons/playIcon';
 import useStore from '../../hooks/useStore';
 
-import StyledButton from './styledButton';
 import StyledDiv from './styledDiv';
+import StyledExerciseButton from './styledExerciseButton';
 
 export default function ExerciseButton() {
-	const times = useStore(state => state.times);
-	const length = times.length;
-	const lastTime = times[length - 1];
+	const exerciseTimes = useStore(state => state.exerciseTimes);
+	const length = exerciseTimes.length;
+	const lastTime = exerciseTimes[length - 1];
 
 	return (
-		<StyledButton>
-			<Link href="/exercisePage">
+		<StyledExerciseButton>
+			<Link href="/exerciseFormPage">
 				<StyledDiv>
 					<PlayIcon />
 					<p>Exercise</p>
@@ -27,6 +27,6 @@ export default function ExerciseButton() {
 					)}
 				</StyledDiv>
 			</Link>
-		</StyledButton>
+		</StyledExerciseButton>
 	);
 }

@@ -1,9 +1,9 @@
 import Head from 'next/head';
 
+import TimerExercise from '../components/exerciseForm/timerForm';
 import Layout from '../components/Layout';
-import Timer from '../components/timer/timer';
 
-import StyledExercisePage from './styledExercisePage';
+import StyledExercisePage from './styledcomponents/styledExerciseFormPage';
 
 export default function ExercisePage() {
 	return (
@@ -13,7 +13,7 @@ export default function ExercisePage() {
 				<meta key="description" name="description" content="time configurator" />
 			</Head>
 			<StyledExercisePage>
-				<Timer />
+				<TimerExercise />
 			</StyledExercisePage>
 		</Layout>
 	);
