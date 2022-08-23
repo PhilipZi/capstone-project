@@ -1,8 +1,8 @@
 import Head from 'next/head';
 
+import CountDownButton from '../components/CountDownButton';
 import ExerciseCard from '../components/ExerciseCard';
 import BlackArrowDown from '../components/Icons/blackArrowDown';
-import PlayIconMain from '../components/Icons/playIconMain';
 import PauseCard from '../components/PauseCard';
 import RepetitionCard from '../components/RepetitionCard';
 import SetPauseCard from '../components/SetPauseCard';
@@ -17,7 +17,7 @@ export default function HomePage() {
 				<meta key="description" name="description" content="This is my project" />
 			</Head>
 			<StyledSetupContainer>
-				<PlayIconMain />
+				<CountDownButton />
 				<p>click these buttons to configurate your setup</p>
 				<BlackArrowDown />
 				<ExerciseCard />
