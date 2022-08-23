@@ -6,7 +6,7 @@ const StyledSetupContainer = styled.section`
 	align-items: center;
 	justify-content: flex-end;
 	min-height: 100vh;
-	padding: 40px;
+	padding: 25px;
 	gap: 10px;
 `;
 
