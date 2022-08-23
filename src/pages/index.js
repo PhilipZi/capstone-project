@@ -1,7 +1,7 @@
 import Head from 'next/head';
 
 import ExerciseCard from '../components/ExerciseCard';
-import BlackArrowDown from '../components/Icons/blackArrowDown';
+import BlackArrowDown from '../components/Icons/BlackArrowDown';
 import StyledSetupContainer from '../components/StyledSetupContainer';
 
 export default function HomePage() {
