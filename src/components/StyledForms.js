@@ -1,6 +1,6 @@
 import styled, {css} from 'styled-components';
 
-const StyledForms = styled.form`
+const StyledForm = styled.form`
 	${({variant = 'exercise'}) =>
 		variant === 'exercise' &&
 		css`
@@ -11,4 +11,4 @@ const StyledForms = styled.form`
 		`}
 `;
 
-export default StyledForms;
+export default StyledForm;

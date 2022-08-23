@@ -1,11 +1,11 @@
 import styled, {css} from 'styled-components';
 
-const StyledCards = styled.div`
+const StyledCard = styled.div`
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
 	min-width: 260px;
-	padding: 3px 10px;
+	padding: 12px 10px;
 	border: none;
 	border-radius: 7px;
 	cursor: pointer;
@@ -15,4 +15,4 @@ const StyledCards = styled.div`
 			background-color: #acebaa;
 		`}
 `;
-export default StyledCards;
+export default StyledCard;

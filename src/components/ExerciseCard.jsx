@@ -3,17 +3,17 @@ import Link from 'next/link';
 import useStore from '../hooks/useStore';
 
 import PlayIcon from './Icons/PlayIcon';
-import StyledCards from './StyledCards';
+import StyledCard from './StyledCards';
 
 export default function ExerciseCard() {
 	const exerciseTimes = useStore(state => state.exerciseTimes);
 	const length = exerciseTimes.length;
 	const lastTime = exerciseTimes[length - 1];
 	return (
-		<Link href="/exercise">
-			<StyledCards variant="exercise">
+		<Link href="/exercise-form">
+			<StyledCard variant="exercise">
 				<PlayIcon />
-				<p>Exercise</p>
+				<span>Exercise</span>
 				{lastTime ? (
 					<a key={lastTime.id}>
 						{lastTime.minutes.toString().padStart(2, '0')}:
@@ -22,7 +22,7 @@ export default function ExerciseCard() {
 				) : (
 					'00:00'
 				)}
-			</StyledCards>
+			</StyledCard>
 		</Link>
 	);
 }
