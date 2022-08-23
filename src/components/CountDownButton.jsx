@@ -4,7 +4,7 @@ import PlayIconMain from './Icons/PlayIconMain';
 
 export default function CountDownButton() {
 	return (
-		<Link href="exercise">
+		<Link href="countdown">
 			<a>
 				<PlayIconMain />
 			</a>

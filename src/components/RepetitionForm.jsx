@@ -37,6 +37,7 @@ export default function RepetitionForm() {
 		};
 		addRepetitionCounter(repetitionCounterObj);
 		router.push('/');
+		console.log(repetitionCounter);
 	}
 
 	return (
