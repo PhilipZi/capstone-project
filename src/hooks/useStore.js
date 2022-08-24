@@ -7,6 +7,13 @@ const useStore = create(set => ({
 			return {exerciseTimes: [...state.exerciseTimes, timeObjExercise]};
 		});
 	},
+
+	repetitionCounter: [],
+	addRepetitionCounter: repetitionCounterObj => {
+		set(state => {
+			return {repetitionCounter: [...state.repetitionCounter, repetitionCounterObj]};
+		});
+	},
 }));
 
 export default useStore;

@@ -5,6 +5,7 @@ const StyledCard = styled.div`
 	align-items: center;
 	justify-content: space-between;
 	min-width: 260px;
+	height: 54px;
 	padding: 12px 10px;
 	border: none;
 	border-radius: 7px;
@@ -13,6 +14,12 @@ const StyledCard = styled.div`
 		variant === 'exercise' &&
 		css`
 			background-color: #acebaa;
+		`}
+
+	${({variant = 'repetition'}) =>
+		variant === 'repetition' &&
+		css`
+			background-color: #9edbee;
 		`}
 `;
 export default StyledCard;

@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 const StyledH2 = styled.h2`
-	font-size: 1.5cm;
+	font-size: 4rem;
 `;
 
 export default function Timer({minutes, seconds}) {
