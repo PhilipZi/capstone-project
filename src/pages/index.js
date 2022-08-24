@@ -2,6 +2,7 @@ import Head from 'next/head';
 
 import ExerciseCard from '../components/ExerciseCard';
 import BlackArrowDown from '../components/Icons/BlackArrowDown';
+import PauseCard from '../components/PauseCard';
 import RepetitionCard from '../components/RepetitionCard';
 import StyledSetupContainer from '../components/StyledSetupContainer';
 
@@ -17,6 +18,7 @@ export default function HomePage() {
 				<BlackArrowDown />
 				<ExerciseCard />
 				<RepetitionCard />
+				<PauseCard />
 			</StyledSetupContainer>
 		</>
 	);

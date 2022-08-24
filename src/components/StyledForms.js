@@ -15,7 +15,15 @@ const StyledForm = styled.form`
 			display: flex;
 			justify-content: center;
 			align-items: center;
-			padding-top: 110px;
+			padding-top: 100px;
+		`}
+		${({variant = 'pause'}) =>
+		variant === 'pause' &&
+		css`
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			gap: 80px;
 		`}
 `;
 
