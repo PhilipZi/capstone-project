@@ -1,4 +1,3 @@
-import {nanoid} from 'nanoid';
 import {useRouter} from 'next/router';
 import {useState} from 'react';
 
@@ -24,7 +23,7 @@ export default function PauseForm() {
 		setSeconds(Number(event.target.value));
 	}
 
-	const addPauseTime = useStore(state => state.addPauseTime);
+	const setPause = useStore(state => state.setPause);
 
 	function handleSubmit(event) {
 		event.preventDefault();
@@ -32,11 +31,10 @@ export default function PauseForm() {
 		const timeSec = Number.parseInt(event.target.seconds.value);
 
 		const timeObjPause = {
-			id: nanoid(),
 			minutes: timeMin,
 			seconds: timeSec,
 		};
-		addPauseTime(timeObjPause);
+		setPause(timeObjPause);
 		router.back();
 	}
 

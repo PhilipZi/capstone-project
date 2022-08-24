@@ -6,18 +6,17 @@ import SetPauseIcon from './Icons/SetPauseIcon';
 import StyledCards from './StyledCards';
 
 export default function SetPauseCard() {
-	const setPauseTimes = useStore(state => state.setPauseTimes);
-	const length = setPauseTimes.length;
-	const lastTime = setPauseTimes[length - 1];
+	const currentExercise = useStore(state => state.currentExercise);
+
 	return (
 		<Link href="/setpause">
 			<StyledCards variant="setpause">
 				<SetPauseIcon />
 				<p>Set Pause</p>
-				{lastTime ? (
-					<a key={lastTime.id}>
-						{lastTime.minutes.toString().padStart(2, '0')}:
-						{lastTime?.seconds.toString().padStart(2, '0')}
+				{currentExercise.setPause ? (
+					<a>
+						{currentExercise.setPause.minutes.toString().padStart(2, '0')}:
+						{currentExercise.setPause?.seconds.toString().padStart(2, '0')}
 					</a>
 				) : (
 					'00:00'

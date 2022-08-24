@@ -1,4 +1,3 @@
-import {nanoid} from 'nanoid';
 import {useRouter} from 'next/router';
 import {useState} from 'react';
 
@@ -26,18 +25,12 @@ export default function RepetitionForm() {
 		setRepetitionCounter(repetitionCounter + 1);
 	}
 
-	const addRepetitionCounter = useStore(state => state.addRepetitionCounter);
+	const setRepetition = useStore(state => state.setRepetition);
 
 	function handleSubmit(event) {
 		event.preventDefault();
-
-		const repetitionCounterObj = {
-			id: nanoid(),
-			repetitionCounter: repetitionCounter,
-		};
-		addRepetitionCounter(repetitionCounterObj);
+		setRepetition(repetitionCounter);
 		router.push('/');
-		console.log(repetitionCounter);
 	}
 
 	return (

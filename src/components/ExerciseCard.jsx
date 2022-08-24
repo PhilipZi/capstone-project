@@ -6,18 +6,17 @@ import PlayIcon from './Icons/PlayIcon';
 import StyledCards from './StyledCards';
 
 export default function ExerciseCard() {
-	const exerciseTimes = useStore(state => state.exerciseTimes);
-	const length = exerciseTimes.length;
-	const lastTime = exerciseTimes[length - 1];
+	const currentExercise = useStore(state => state.currentExercise);
+
 	return (
 		<Link href="/exercise">
 			<StyledCards variant="exercise">
 				<PlayIcon />
 				<p>Exercise</p>
-				{lastTime ? (
-					<a key={lastTime.id}>
-						{lastTime.minutes.toString().padStart(2, '0')}:
-						{lastTime?.seconds.toString().padStart(2, '0')}
+				{currentExercise ? (
+					<a>
+						{currentExercise.exercise.minutes.toString().padStart(2, '0')}:
+						{currentExercise?.exercise.seconds.toString().padStart(2, '0')}
 					</a>
 				) : (
 					'00:00'
