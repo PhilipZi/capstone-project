@@ -12,5 +12,10 @@ const StyledFormContainer = styled.section`
 		css`
 			background-color: #9edbee;
 		`}
+	${({variant = 'pause'}) =>
+		variant === 'pause' &&
+		css`
+			background-color: #f68787;
+		`}
 `;
 export default StyledFormContainer;

@@ -14,6 +14,27 @@ const useStore = create(set => ({
 			return {repetitionCounter: [...state.repetitionCounter, repetitionCounterObj]};
 		});
 	},
+
+	pauseTimes: [],
+	addPauseTime: timeObjPause => {
+		set(state => {
+			return {pauseTimes: [...state.pauseTimes, timeObjPause]};
+		});
+	},
+
+	setsCounter: [],
+	addSetsCounter: setsCounterObj => {
+		set(state => {
+			return {setsCounter: [...state.setsCounter, setsCounterObj]};
+		});
+	},
+
+	setPauseTimes: [],
+	addSetPauseTime: timeObjSetPause => {
+		set(state => {
+			return {setPauseTimes: [...state.setPauseTimes, timeObjSetPause]};
+		});
+	},
 }));
 
 export default useStore;
