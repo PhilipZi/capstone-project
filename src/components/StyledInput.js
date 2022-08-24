@@ -36,6 +36,15 @@ const StyledInput = styled.input`
 			background-color: transparent;
 			cursor: pointer;
 		`}
+
+	${({variant = 'counter'}) =>
+		variant === 'counter' &&
+		css`
+			border: none;
+			background-color: transparent;
+			font-size: 80px;
+			text-align: center;
+		`}
 `;
 
 export default StyledInput;

@@ -9,6 +9,14 @@ const StyledForm = styled.form`
 			align-items: center;
 			gap: 80px;
 		`}
+	${({variant = 'repetition'}) =>
+		variant === 'repetition' &&
+		css`
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			padding-top: 110px;
+		`}
 `;
 
 export default StyledForm;

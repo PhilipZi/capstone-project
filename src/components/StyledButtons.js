@@ -10,11 +10,18 @@ const StyledButton = styled.button`
 			position: absolute;
 			right: 40px;
 			bottom: 70px;
+			height: 40px;
+			width: 50px;
 		`}
 	${({variant = 'goback'}) =>
 		variant === 'goback' &&
 		css`
-			padding-left: 16px;
+			padding-left: 20px;
+		`}
+	${({variant = 'plus'}) =>
+		variant === 'plus' &&
+		css`
+			padding: 0;
 		`}
 `;
 

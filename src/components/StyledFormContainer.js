@@ -7,5 +7,10 @@ const StyledFormContainer = styled.section`
 		css`
 			background-color: #acebaa;
 		`}
+	${({variant = 'repetition'}) =>
+		variant === 'repetition' &&
+		css`
+			background-color: #9edbee;
+		`}
 `;
 export default StyledFormContainer;

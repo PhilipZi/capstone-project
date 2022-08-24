@@ -1,7 +1,8 @@
 import Head from 'next/head';
 
 import ExerciseCard from '../components/ExerciseCard';
-import BlackArrowDown from '../components/Icons/BlackArrowDown';
+import BlackArrowDown from '../components/Icons/blackArrowDown';
+import RepetitionCard from '../components/RepetitionCard';
 import StyledSetupContainer from '../components/StyledSetupContainer';
 
 export default function HomePage() {
@@ -15,6 +16,7 @@ export default function HomePage() {
 				<p>click these buttons to configurate your setup</p>
 				<BlackArrowDown />
 				<ExerciseCard />
+				<RepetitionCard />
 			</StyledSetupContainer>
 		</>
 	);
