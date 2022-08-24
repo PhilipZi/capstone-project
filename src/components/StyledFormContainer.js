@@ -17,5 +17,10 @@ const StyledFormContainer = styled.section`
 		css`
 			background-color: #f68787;
 		`}
+		${({variant = 'sets'}) =>
+		variant === 'sets' &&
+		css`
+			background-color: #cfcfc9;
+		`}
 `;
 export default StyledFormContainer;

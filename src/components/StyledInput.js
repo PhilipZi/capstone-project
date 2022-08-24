@@ -5,6 +5,7 @@ const StyledInput = styled.input`
 		variant === 'range' &&
 		css`
 			transform: rotate(-90deg);
+			cursor: pointer;
 		`}
 
 	${({variant = 'counter'}) =>

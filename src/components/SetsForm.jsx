@@ -5,7 +5,7 @@ import {useState} from 'react';
 import useStore from '../hooks/useStore';
 
 import MinusIcon from './Icons/MinusIcon';
-import PlusIcon from './Icons/PlusIcon';
+import PlusIcon from './Icons/plusIcon';
 import RepetitionIcon from './Icons/RepetitionIcon';
 import MoveBackButton from './MoveBackButton';
 import StyledButton from './StyledButtons';
@@ -13,28 +13,27 @@ import StyledForm from './StyledForms';
 import {StyledHeader, StyledH1} from './StyledHeader';
 import StyledInput from './StyledInput';
 import SubmitButton from './SubmitButton';
-
-export default function RepetitionForm() {
+export default function SetsForm() {
 	const router = useRouter();
-	const [repetitionCounter, setRepetitionCounter] = useState(0);
+	const [setsCounter, setSetsCounter] = useState(0);
+
 	function decrementRepetition() {
-		setRepetitionCounter(repetitionCounter - 1);
+		setSetsCounter(setsCounter - 1);
 	}
 
 	function incrementCounter() {
-		setRepetitionCounter(repetitionCounter + 1);
+		setSetsCounter(setsCounter + 1);
 	}
-
-	const addRepetitionCounter = useStore(state => state.addRepetitionCounter);
+	const addSetsCounter = useStore(state => state.addSetsCounter);
 
 	function handleSubmit(event) {
 		event.preventDefault();
 
-		const repetitionCounterObj = {
+		const setsCounterObj = {
 			id: nanoid(),
-			repetitionCounter: repetitionCounter,
+			setsCounter: setsCounter,
 		};
-		addRepetitionCounter(repetitionCounterObj);
+		addSetsCounter(setsCounterObj);
 		router.push('/');
 	}
 
@@ -50,14 +49,14 @@ export default function RepetitionForm() {
 				<StyledButton
 					aria-label="decrement"
 					onClick={decrementRepetition}
-					disabled={repetitionCounter === 0}
+					disabled={setsCounter === 0}
 					type="button"
 					variant="plus"
 				>
 					<MinusIcon />
 				</StyledButton>
 				<StyledInput
-					value={repetitionCounter.toString().padEnd(2, 'x')}
+					value={setsCounter.toString().padEnd(2, 'x')}
 					size={2}
 					readOnly
 					variant="counter"
