@@ -56,6 +56,7 @@ export default function RepetitionForm() {
 				>
 					<MinusIcon />
 				</StyledButton>
+
 				<StyledInput
 					value={repetitionCounter.toString().padEnd(2, 'x')}
 					size={2}
@@ -71,6 +72,7 @@ export default function RepetitionForm() {
 				>
 					<PlusIcon />
 				</StyledButton>
+
 				<SubmitButton />
 			</StyledForm>
 		</>
