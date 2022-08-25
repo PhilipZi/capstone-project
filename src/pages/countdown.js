@@ -13,21 +13,17 @@ export default function CountDown() {
 	const exercises = useMemo(() => {
 		const _exercises = [];
 		for (let i = 0; i < numElements; i++) {
-			numElements === 0 ? (
-				<ExerciseCard />
-			) : (
-				_exercises.push(() => (
-					<div>
-						<ExerciseCard />
-						{i < numElements - 1 &&
-						(currentExercise.pause.minutes > 0 || currentExercise.pause.seconds > 0) ? (
-							<PauseCard />
-						) : (
-							''
-						)}
-					</div>
-				))
-			);
+			_exercises.push(() => (
+				<div>
+					<ExerciseCard />
+					{i < numElements - 1 &&
+					(currentExercise.pause.minutes > 0 || currentExercise.pause.seconds > 0) ? (
+						<PauseCard />
+					) : (
+						''
+					)}
+				</div>
+			));
 		}
 
 		return _exercises;
