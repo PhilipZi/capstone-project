@@ -1,13 +1,14 @@
 import styled, {css} from 'styled-components';
 
 const StyledInput = styled.input`
-	${({variant = 'range'}) =>
+	${({variant}) =>
 		variant === 'range' &&
 		css`
 			transform: rotate(-90deg);
+			cursor: pointer;
 		`}
 
-	${({variant = 'counter'}) =>
+	${({variant}) =>
 		variant === 'counter' &&
 		css`
 			border: none;
