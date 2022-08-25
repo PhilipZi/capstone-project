@@ -1,4 +1,3 @@
-import {nanoid} from 'nanoid';
 import {useRouter} from 'next/router';
 import {useState} from 'react';
 
@@ -24,16 +23,12 @@ export default function SetsForm() {
 	function incrementCounter() {
 		setSetsCounter(setsCounter + 1);
 	}
-	const addSetsCounter = useStore(state => state.addSetsCounter);
+	const setSets = useStore(state => state.setSets);
 
 	function handleSubmit(event) {
 		event.preventDefault();
 
-		const setsCounterObject = {
-			id: nanoid(),
-			setsCounter: setsCounter,
-		};
-		addSetsCounter(setsCounterObject);
+		setSets(setsCounter);
 		router.push('/');
 	}
 
