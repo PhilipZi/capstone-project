@@ -1,33 +1,34 @@
 import Head from 'next/head';
 import {useMemo} from 'react';
 
-import ExerciseCard from '../components/ExerciseCard';
 import MoveBackButton from '../components/MoveBackButton';
-import PauseCard from '../components/PauseCard';
+import RepetitionsExercises from '../components/RepetitionsExercises';
+import SetPauseCard from '../components/SetPauseCard';
 import useStore from '../hooks/useStore';
+
 export default function CountDown() {
 	const currentExercise = useStore(state => state.currentExercise);
 
-	const amountRepetitions = currentExercise.repetition;
+	const amountSets = currentExercise.sets;
 
-	const exercises = useMemo(() => {
-		const _exercises = [];
-		for (let i = 0; i < amountRepetitions; i++) {
-			_exercises.push(() => (
+	const sets = useMemo(() => {
+		const _sets = [];
+		for (let i = 0; i < amountSets; i++) {
+			_sets.push(() => (
 				<div>
-					<ExerciseCard />
-					{i < amountRepetitions - 1 &&
-					(currentExercise.pause.minutes > 0 || currentExercise.pause.seconds > 0) ? (
-						<PauseCard />
+					<RepetitionsExercises />
+					{i < amountSets - 1 &&
+					(currentExercise.setPause.minutes > 0 ||
+						currentExercise.setPause.seconds > 0) ? (
+						<SetPauseCard />
 					) : (
 						''
 					)}
 				</div>
 			));
 		}
-
-		return _exercises;
-	}, [amountRepetitions, currentExercise]);
+		return _sets;
+	}, [amountSets, currentExercise]);
 
 	return (
 		<>
@@ -38,7 +39,7 @@ export default function CountDown() {
 			<MoveBackButton />
 
 			<div>
-				{exercises.map((Block, idx) => (
+				{sets.map((Block, idx) => (
 					<Block key={idx} />
 				))}
 			</div>
