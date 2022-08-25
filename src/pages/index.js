@@ -2,7 +2,6 @@ import Head from 'next/head';
 
 import CountDownButton from '../components/CountDownButton';
 import ExerciseCard from '../components/ExerciseCard';
-import BlackArrowDown from '../components/Icons/BlackArrowDown';
 import PauseCard from '../components/PauseCard';
 import RepetitionCard from '../components/RepetitionCard';
 import SetPauseCard from '../components/SetPauseCard';
@@ -18,8 +17,7 @@ export default function HomePage() {
 			</Head>
 			<StyledSetupContainer>
 				<CountDownButton />
-				<p>click these buttons to configurate your setup</p>
-				<BlackArrowDown />
+
 				<ExerciseCard />
 				<RepetitionCard />
 				<PauseCard />
