@@ -29,11 +29,11 @@ export default function SetsForm() {
 	function handleSubmit(event) {
 		event.preventDefault();
 
-		const setsCounterObj = {
+		const setsCounterObject = {
 			id: nanoid(),
 			setsCounter: setsCounter,
 		};
-		addSetsCounter(setsCounterObj);
+		addSetsCounter(setsCounterObject);
 		router.push('/');
 	}
 

@@ -30,11 +30,11 @@ export default function RepetitionForm() {
 	function handleSubmit(event) {
 		event.preventDefault();
 
-		const repetitionCounterObj = {
+		const repetitionCounterObject = {
 			id: nanoid(),
 			repetitionCounter: repetitionCounter,
 		};
-		addRepetitionCounter(repetitionCounterObj);
+		addRepetitionCounter(repetitionCounterObject);
 		router.push('/');
 	}
 

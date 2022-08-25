@@ -9,9 +9,9 @@ const useStore = create(set => ({
 	},
 
 	repetitionCounter: [],
-	addRepetitionCounter: repetitionCounterObj => {
+	addRepetitionCounter: repetitionCounterObject => {
 		set(state => {
-			return {repetitionCounter: [...state.repetitionCounter, repetitionCounterObj]};
+			return {repetitionCounter: [...state.repetitionCounter, repetitionCounterObject]};
 		});
 	},
 
@@ -23,9 +23,9 @@ const useStore = create(set => ({
 	},
 
 	setsCounter: [],
-	addSetsCounter: setsCounterObj => {
+	addSetsCounter: setsCounterObject => {
 		set(state => {
-			return {setsCounter: [...state.setsCounter, setsCounterObj]};
+			return {setsCounter: [...state.setsCounter, setsCounterObject]};
 		});
 	},
 
