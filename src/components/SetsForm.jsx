@@ -1,4 +1,3 @@
-import {nanoid} from 'nanoid';
 import {useRouter} from 'next/router';
 import {useState} from 'react';
 
@@ -15,7 +14,7 @@ import StyledInput from './StyledInput';
 import SubmitButton from './SubmitButton';
 export default function SetsForm() {
 	const router = useRouter();
-	const [setsCounter, setSetsCounter] = useState(0);
+	const [setsCounter, setSetsCounter] = useState(1);
 
 	function decrementRepetition() {
 		setSetsCounter(setsCounter - 1);
@@ -24,16 +23,12 @@ export default function SetsForm() {
 	function incrementCounter() {
 		setSetsCounter(setsCounter + 1);
 	}
-	const addSetsCounter = useStore(state => state.addSetsCounter);
+	const setSets = useStore(state => state.setSets);
 
 	function handleSubmit(event) {
 		event.preventDefault();
 
-		const setsCounterObject = {
-			id: nanoid(),
-			setsCounter: setsCounter,
-		};
-		addSetsCounter(setsCounterObject);
+		setSets(setsCounter);
 		router.push('/');
 	}
 
@@ -49,18 +44,21 @@ export default function SetsForm() {
 				<StyledButton
 					aria-label="decrement"
 					onClick={decrementRepetition}
-					disabled={setsCounter === 0}
+					disabled={setsCounter === 1}
 					type="button"
 					variant="plus"
 				>
 					<MinusIcon />
 				</StyledButton>
-				<StyledInput
-					value={setsCounter.toString().padEnd(2, 'x')}
-					size={2}
-					readOnly
-					variant="counter"
-				/>
+				<label htmlFor="setsCounter">
+					<StyledInput
+						id="setsCounter"
+						value={setsCounter.toString().padEnd(2, 'x')}
+						size={2}
+						readOnly
+						variant="counter"
+					/>
+				</label>
 
 				<StyledButton
 					aria-label="increment"

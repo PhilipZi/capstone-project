@@ -25,6 +25,14 @@ const StyledForm = styled.form`
 			align-items: center;
 			gap: 80px;
 		`}
+		${({variant}) =>
+		variant === 'setpause' &&
+		css`
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			gap: 80px;
+		`}
 `;
 
 export default StyledForm;

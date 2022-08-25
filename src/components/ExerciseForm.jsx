@@ -1,4 +1,3 @@
-import {nanoid} from 'nanoid';
 import {useRouter} from 'next/router';
 import {useState} from 'react';
 
@@ -24,7 +23,7 @@ export default function ExerciseForm() {
 		setSeconds(Number(event.target.value));
 	}
 
-	const addExerciseTime = useStore(state => state.addExerciseTime);
+	const setExercise = useStore(state => state.setExercise);
 
 	function handleSubmit(event) {
 		event.preventDefault();
@@ -32,11 +31,10 @@ export default function ExerciseForm() {
 		const timeSec = Number.parseInt(event.target.seconds.value);
 
 		const timeObjExercise = {
-			id: nanoid(),
 			minutes: timeMin,
 			seconds: timeSec,
 		};
-		addExerciseTime(timeObjExercise);
+		setExercise(timeObjExercise);
 		router.back();
 	}
 
@@ -51,8 +49,22 @@ export default function ExerciseForm() {
 			<StyledForm onSubmit={handleSubmit} variant="exercise">
 				<Timer minutes={minutes} seconds={seconds} />
 				<div>
-					<InputRange id="min" value={minutes} onChange={handleMinutes} name="minutes" />
-					<InputRange id="sec" value={seconds} onChange={handleSeconds} name="seconds" />
+					<label htmlFor="min">
+						<InputRange
+							id="min"
+							value={minutes}
+							onChange={handleMinutes}
+							name="minutes"
+						/>
+					</label>
+					<label htmlFor="sec">
+						<InputRange
+							id="sec"
+							value={seconds}
+							onChange={handleSeconds}
+							name="seconds"
+						/>
+					</label>
 				</div>
 				<SubmitButton />
 			</StyledForm>

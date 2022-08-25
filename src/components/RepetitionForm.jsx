@@ -1,4 +1,3 @@
-import {nanoid} from 'nanoid';
 import {useRouter} from 'next/router';
 import {useState} from 'react';
 
@@ -16,7 +15,7 @@ import SubmitButton from './SubmitButton';
 
 export default function RepetitionForm() {
 	const router = useRouter();
-	const [repetitionCounter, setRepetitionCounter] = useState(0);
+	const [repetitionCounter, setRepetitionCounter] = useState(1);
 	function decrementRepetition() {
 		setRepetitionCounter(repetitionCounter - 1);
 	}
@@ -25,16 +24,11 @@ export default function RepetitionForm() {
 		setRepetitionCounter(repetitionCounter + 1);
 	}
 
-	const addRepetitionCounter = useStore(state => state.addRepetitionCounter);
+	const setRepetition = useStore(state => state.setRepetition);
 
 	function handleSubmit(event) {
 		event.preventDefault();
-
-		const repetitionCounterObject = {
-			id: nanoid(),
-			repetitionCounter: repetitionCounter,
-		};
-		addRepetitionCounter(repetitionCounterObject);
+		setRepetition(repetitionCounter);
 		router.push('/');
 	}
 
@@ -50,18 +44,21 @@ export default function RepetitionForm() {
 				<StyledButton
 					aria-label="decrement"
 					onClick={decrementRepetition}
-					disabled={repetitionCounter === 0}
+					disabled={repetitionCounter === 1}
 					type="button"
 					variant="plus"
 				>
 					<MinusIcon />
 				</StyledButton>
-				<StyledInput
-					value={repetitionCounter.toString().padEnd(2, 'x')}
-					size={2}
-					readOnly
-					variant="counter"
-				/>
+				<label htmlFor="repetitionCounter">
+					<StyledInput
+						id="repetitionCounter"
+						value={repetitionCounter.toString().padEnd(2, 'x')}
+						size={2}
+						readOnly
+						variant="counter"
+					/>
+				</label>
 
 				<StyledButton
 					aria-label="increment"

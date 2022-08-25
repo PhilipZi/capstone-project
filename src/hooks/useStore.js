@@ -1,40 +1,85 @@
 import create from 'zustand';
 
 const useStore = create(set => ({
-	exerciseTimes: [],
-	addExerciseTime: timeObjExercise => {
+	currentExercise: {
+		exercise: {minutes: 0, seconds: 0},
+		repetition: 1,
+		pause: {minutes: 0, seconds: 0},
+		sets: 1,
+		setPause: {minutes: 0, seconds: 0},
+	},
+	setExercise: newExercise => {
 		set(state => {
-			return {exerciseTimes: [...state.exerciseTimes, timeObjExercise]};
+			return {
+				currentExercise: {...state.currentExercise, exercise: newExercise},
+			};
 		});
 	},
-
-	repetitionCounter: [],
-	addRepetitionCounter: repetitionCounterObject => {
+	setRepetition: newRepetitions => {
 		set(state => {
-			return {repetitionCounter: [...state.repetitionCounter, repetitionCounterObject]};
+			return {
+				currentExercise: {...state.currentExercise, repetition: newRepetitions},
+			};
 		});
 	},
-
-	pauseTimes: [],
-	addPauseTime: timeObjPause => {
+	setPause: newPause => {
 		set(state => {
-			return {pauseTimes: [...state.pauseTimes, timeObjPause]};
+			return {
+				currentExercise: {...state.currentExercise, pause: newPause},
+			};
 		});
 	},
-
-	setsCounter: [],
-	addSetsCounter: setsCounterObject => {
+	setSets: newSets => {
 		set(state => {
-			return {setsCounter: [...state.setsCounter, setsCounterObject]};
+			return {
+				currentExercise: {...state.currentExercise, sets: newSets},
+			};
 		});
 	},
-
-	setPauseTimes: [],
-	addSetPauseTime: timeObjSetPause => {
+	setPauseSets: newPauseSets => {
 		set(state => {
-			return {setPauseTimes: [...state.setPauseTimes, timeObjSetPause]};
+			return {
+				currentExercise: {...state.currentExercise, setPause: newPauseSets},
+			};
 		});
 	},
 }));
+
+// const useStore = create(set => ({
+// 	exerciseTimes: [],
+// 	addExerciseTime: timeObjExercise => {
+// 		set(state => {
+// 			return {exerciseTimes: [...state.exerciseTimes, timeObjExercise]};
+// 		});
+// 	},
+
+// 	repetitionCounter: [],
+// 	addRepetitionCounter: repetitionCounterObj => {
+// 		set(state => {
+// 			return {repetitionCounter: [...state.repetitionCounter, repetitionCounterObj]};
+// 		});
+// 	},
+
+// 	pauseTimes: [],
+// 	addPauseTime: timeObjPause => {
+// 		set(state => {
+// 			return {pauseTimes: [...state.pauseTimes, timeObjPause]};
+// 		});
+// 	},
+
+// 	setsCounter: [],
+// 	addSetsCounter: setsCounterObj => {
+// 		set(state => {
+// 			return {setsCounter: [...state.setsCounter, setsCounterObj]};
+// 		});
+// 	},
+
+// 	setPauseTimes: [],
+// 	addSetPauseTime: timeObjSetPause => {
+// 		set(state => {
+// 			return {setPauseTimes: [...state.setPauseTimes, timeObjSetPause]};
+// 		});
+// 	},
+// }));
 
 export default useStore;
