@@ -50,12 +50,15 @@ export default function SetsForm() {
 				>
 					<MinusIcon />
 				</StyledButton>
-				<StyledInput
-					value={setsCounter.toString().padEnd(2, 'x')}
-					size={2}
-					readOnly
-					variant="counter"
-				/>
+				<label htmlFor="setsCounter">
+					<StyledInput
+						id="setsCounter"
+						value={setsCounter.toString().padEnd(2, 'x')}
+						size={2}
+						readOnly
+						variant="counter"
+					/>
+				</label>
 
 				<StyledButton
 					aria-label="increment"

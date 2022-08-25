@@ -50,12 +50,15 @@ export default function RepetitionForm() {
 				>
 					<MinusIcon />
 				</StyledButton>
-				<StyledInput
-					value={repetitionCounter.toString().padEnd(2, 'x')}
-					size={2}
-					readOnly
-					variant="counter"
-				/>
+				<label htmlFor="repetitionCounter">
+					<StyledInput
+						id="repetitionCounter"
+						value={repetitionCounter.toString().padEnd(2, 'x')}
+						size={2}
+						readOnly
+						variant="counter"
+					/>
+				</label>
 
 				<StyledButton
 					aria-label="increment"
