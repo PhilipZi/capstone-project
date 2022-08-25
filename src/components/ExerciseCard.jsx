@@ -3,14 +3,14 @@ import Link from 'next/link';
 import useStore from '../hooks/useStore';
 
 import PlayIcon from './Icons/PlayIcon';
-import StyledCards from './StyledCards';
+import StyledCard from './StyledCards';
 
 export default function ExerciseCard() {
 	const currentExercise = useStore(state => state.currentExercise);
 
 	return (
-		<Link href="/exercise">
-			<StyledCards variant="exercise">
+		<Link href="/exercise-form">
+			<StyledCard variant="exercise">
 				<PlayIcon />
 				<p>Exercise</p>
 				{currentExercise ? (
@@ -21,7 +21,7 @@ export default function ExerciseCard() {
 				) : (
 					'00:00'
 				)}
-			</StyledCards>
+			</StyledCard>
 		</Link>
 	);
 }

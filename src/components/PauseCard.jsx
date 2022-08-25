@@ -3,14 +3,14 @@ import Link from 'next/link';
 import useStore from '../hooks/useStore';
 
 import PauseIcon from './Icons/PauseIcon';
-import StyledCards from './StyledCards';
+import StyledCard from './StyledCards';
 
 export default function PauseCard() {
 	const currentExercise = useStore(state => state.currentExercise);
 
 	return (
-		<Link href="/pause">
-			<StyledCards variant="pause">
+		<Link href="/pause-form">
+			<StyledCard variant="pause">
 				<PauseIcon />
 				<p>Pause</p>
 				{currentExercise.pause ? (
@@ -21,7 +21,7 @@ export default function PauseCard() {
 				) : (
 					'00:00'
 				)}
-			</StyledCards>
+			</StyledCard>
 		</Link>
 	);
 }

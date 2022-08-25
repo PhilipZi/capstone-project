@@ -4,12 +4,11 @@ import {useState} from 'react';
 import useStore from '../hooks/useStore';
 
 import MinusIcon from './Icons/MinusIcon';
-import PlusIcon from './Icons/plusIcon';
+import PlusIcon from './Icons/PlusIcon';
 import RepetitionIcon from './Icons/RepetitionIcon';
 import MoveBackButton from './MoveBackButton';
 import StyledButton from './StyledButtons';
-import StyledCounterContainer from './StyledCounterContainer';
-import StyledForm from './StyledForm';
+import StyledForm from './StyledForms';
 import {StyledHeader, StyledH1} from './StyledHeader';
 import StyledInput from './StyledInput';
 import SubmitButton from './SubmitButton';
@@ -35,43 +34,42 @@ export default function SetsForm() {
 
 	return (
 		<>
-			<StyledCounterContainer>
-				<StyledHeader>
-					<StyledH1>
-						<RepetitionIcon /> Repetition
-					</StyledH1>
-				</StyledHeader>
-				<MoveBackButton />
-				<div>
-					<StyledForm variant="repetition" onSubmit={handleSubmit}>
-						<StyledButton
-							aria-label="decrement"
-							onClick={decrementRepetition}
-							disabled={setsCounter === 0}
-							type="button"
-							variant="plus"
-						>
-							<MinusIcon />
-						</StyledButton>
-						<StyledInput
-							value={setsCounter.toString().padEnd(2, 'x')}
-							size={2}
-							readOnly
-							variant="counter"
-						/>
+			<StyledHeader>
+				<StyledH1>
+					<RepetitionIcon /> Repetition
+				</StyledH1>
+			</StyledHeader>
+			<MoveBackButton />
+			<StyledForm variant="repetition" onSubmit={handleSubmit}>
+				<StyledButton
+					aria-label="decrement"
+					onClick={decrementRepetition}
+					disabled={setsCounter === 0}
+					type="button"
+					variant="plus"
+				>
+					<MinusIcon />
+				</StyledButton>
+				<label htmlFor="setsCounter">
+					<StyledInput
+						id="setsCounter"
+						value={setsCounter.toString().padEnd(2, 'x')}
+						size={2}
+						readOnly
+						variant="counter"
+					/>
+				</label>
 
-						<StyledButton
-							aria-label="increment"
-							onClick={incrementCounter}
-							type="button"
-							variant="plus"
-						>
-							<PlusIcon />
-						</StyledButton>
-						<SubmitButton />
-					</StyledForm>
-				</div>
-			</StyledCounterContainer>
+				<StyledButton
+					aria-label="increment"
+					onClick={incrementCounter}
+					type="button"
+					variant="plus"
+				>
+					<PlusIcon />
+				</StyledButton>
+				<SubmitButton />
+			</StyledForm>
 		</>
 	);
 }

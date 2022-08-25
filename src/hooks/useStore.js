@@ -3,9 +3,9 @@ import create from 'zustand';
 const useStore = create(set => ({
 	currentExercise: {
 		exercise: {minutes: 0, seconds: 0},
-		repetition: 1,
+		repetition: 0,
 		pause: {minutes: 0, seconds: 0},
-		sets: 1,
+		sets: 0,
 		setPause: {minutes: 0, seconds: 0},
 	},
 	setExercise: newExercise => {
@@ -36,10 +36,10 @@ const useStore = create(set => ({
 			};
 		});
 	},
-	setSetPause: newSetPause => {
+	setPauseSets: newPauseSets => {
 		set(state => {
 			return {
-				currentExercise: {...state.currentExercise, setPause: newSetPause},
+				currentExercise: {...state.currentExercise, setPause: newPauseSets},
 			};
 		});
 	},

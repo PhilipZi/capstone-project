@@ -6,7 +6,7 @@ import useStore from '../hooks/useStore';
 import SetPauseIcon from './Icons/SetPauseIcon';
 import InputRange from './InputRange';
 import MoveBackButton from './MoveBackButton';
-import StyledForm from './StyledForm';
+import StyledForm from './StyledForms';
 import {StyledHeader, StyledH1} from './StyledHeader';
 import SubmitButton from './SubmitButton';
 import Timer from './Timer';
@@ -23,7 +23,7 @@ export default function SetPauseForm() {
 		setSeconds(Number(event.target.value));
 	}
 
-	const setSetPause = useStore(state => state.setSetPause);
+	const setPauseSets = useStore(state => state.setPauseSets);
 
 	function handleSubmit(event) {
 		event.preventDefault();
@@ -34,10 +34,9 @@ export default function SetPauseForm() {
 			minutes: timeMin,
 			seconds: timeSec,
 		};
-		setSetPause(timeObjSetPause);
+		setPauseSets(timeObjSetPause);
 		router.back();
 	}
-
 	return (
 		<>
 			<StyledHeader>
@@ -49,8 +48,22 @@ export default function SetPauseForm() {
 			<StyledForm onSubmit={handleSubmit} variant="setpause">
 				<Timer minutes={minutes} seconds={seconds} />
 				<div>
-					<InputRange id="min" value={minutes} onChange={handleMinutes} name="minutes" />
-					<InputRange id="sec" value={seconds} onChange={handleSeconds} name="seconds" />
+					<label htmlFor="min">
+						<InputRange
+							id="min"
+							value={minutes}
+							onChange={handleMinutes}
+							name="minutes"
+						/>
+					</label>
+					<label htmlFor="sec">
+						<InputRange
+							id="sec"
+							value={seconds}
+							onChange={handleSeconds}
+							name="seconds"
+						/>
+					</label>
 				</div>
 				<SubmitButton />
 			</StyledForm>

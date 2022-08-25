@@ -1,34 +1,27 @@
 import styled, {css} from 'styled-components';
 
 const StyledButton = styled.button`
+	border: none;
+	background-color: transparent;
+	cursor: pointer;
 	${({variant = 'submit'}) =>
 		variant === 'submit' &&
 		css`
 			position: absolute;
 			right: 40px;
 			bottom: 70px;
-			border: none;
-			background-color: transparent;
-			cursor: pointer;
+			height: 40px;
+			width: 50px;
 		`}
-
 	${({variant = 'goback'}) =>
 		variant === 'goback' &&
 		css`
-			position: relative;
-			z-index: 3;
-			padding-left: 16px;
-			border: none;
-			background-color: transparent;
-			cursor: pointer;
+			padding-left: 20px;
 		`}
-
-		${({variant = 'plus'}) =>
+	${({variant = 'plus'}) =>
 		variant === 'plus' &&
 		css`
 			padding: 0;
-			border: none;
-			background-color: transparent;
 		`}
 `;
 

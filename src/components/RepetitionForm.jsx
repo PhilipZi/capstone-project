@@ -4,19 +4,18 @@ import {useState} from 'react';
 import useStore from '../hooks/useStore';
 
 import MinusIcon from './Icons/MinusIcon';
-import PlusIcon from './Icons/plusIcon';
+import PlusIcon from './Icons/PlusIcon';
 import RepetitionIcon from './Icons/RepetitionIcon';
 import MoveBackButton from './MoveBackButton';
 import StyledButton from './StyledButtons';
-import StyledCounterContainer from './StyledCounterContainer';
-import StyledForm from './StyledForm';
+import StyledForm from './StyledForms';
 import {StyledHeader, StyledH1} from './StyledHeader';
 import StyledInput from './StyledInput';
 import SubmitButton from './SubmitButton';
 
 export default function RepetitionForm() {
 	const router = useRouter();
-	const [repetitionCounter, setRepetitionCounter] = useState(1);
+	const [repetitionCounter, setRepetitionCounter] = useState(0);
 	function decrementRepetition() {
 		setRepetitionCounter(repetitionCounter - 1);
 	}
@@ -35,43 +34,42 @@ export default function RepetitionForm() {
 
 	return (
 		<>
-			<StyledCounterContainer>
-				<StyledHeader>
-					<StyledH1>
-						<RepetitionIcon /> Repetition
-					</StyledH1>
-				</StyledHeader>
-				<MoveBackButton />
-				<div>
-					<StyledForm variant="repetition" onSubmit={handleSubmit}>
-						<StyledButton
-							aria-label="decrement"
-							onClick={decrementRepetition}
-							disabled={repetitionCounter === 1}
-							type="button"
-							variant="plus"
-						>
-							<MinusIcon />
-						</StyledButton>
-						<StyledInput
-							value={repetitionCounter.toString().padEnd(2, 'x')}
-							size={2}
-							readOnly
-							variant="counter"
-						/>
+			<StyledHeader>
+				<StyledH1>
+					<RepetitionIcon /> Repetition
+				</StyledH1>
+			</StyledHeader>
+			<MoveBackButton />
+			<StyledForm variant="repetition" onSubmit={handleSubmit}>
+				<StyledButton
+					aria-label="decrement"
+					onClick={decrementRepetition}
+					disabled={repetitionCounter === 0}
+					type="button"
+					variant="plus"
+				>
+					<MinusIcon />
+				</StyledButton>
+				<label htmlFor="repetitionCounter">
+					<StyledInput
+						id="repetitionCounter"
+						value={repetitionCounter.toString().padEnd(2, 'x')}
+						size={2}
+						readOnly
+						variant="counter"
+					/>
+				</label>
 
-						<StyledButton
-							aria-label="increment"
-							onClick={incrementCounter}
-							type="button"
-							variant="plus"
-						>
-							<PlusIcon />
-						</StyledButton>
-						<SubmitButton />
-					</StyledForm>
-				</div>
-			</StyledCounterContainer>
+				<StyledButton
+					aria-label="increment"
+					onClick={incrementCounter}
+					type="button"
+					variant="plus"
+				>
+					<PlusIcon />
+				</StyledButton>
+				<SubmitButton />
+			</StyledForm>
 		</>
 	);
 }

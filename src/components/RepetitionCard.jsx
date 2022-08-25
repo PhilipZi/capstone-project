@@ -3,14 +3,14 @@ import Link from 'next/link';
 import useStore from '../hooks/useStore';
 
 import RepetitionIcon from './Icons/RepetitionIcon';
-import StyledCards from './StyledCards';
+import StyledCard from './StyledCards';
 
 export default function RepetitionCard() {
 	const currentExercise = useStore(state => state.currentExercise);
 
 	return (
-		<Link href="/repetition">
-			<StyledCards variant="repetition">
+		<Link href="/repetition-form">
+			<StyledCard variant="repetition">
 				<RepetitionIcon />
 				<p>Repetition</p>
 				{currentExercise.repetition ? (
@@ -18,7 +18,7 @@ export default function RepetitionCard() {
 				) : (
 					'0x'
 				)}
-			</StyledCards>
+			</StyledCard>
 		</Link>
 	);
 }

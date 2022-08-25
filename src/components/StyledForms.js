@@ -1,7 +1,7 @@
 import styled, {css} from 'styled-components';
 
 const StyledForm = styled.form`
-	${({variant = 'exercise'}) =>
+	${({variant}) =>
 		variant === 'exercise' &&
 		css`
 			display: flex;
@@ -9,17 +9,15 @@ const StyledForm = styled.form`
 			align-items: center;
 			gap: 80px;
 		`}
-	${({variant = 'repetition'}) =>
+	${({variant}) =>
 		variant === 'repetition' &&
 		css`
 			display: flex;
-			min-height: 100vh;
-			position: absolute;
-			top: 45%;
-			left: 50%;
-			transform: translate(-50%, -50%);
+			justify-content: center;
+			align-items: center;
+			padding-top: 100px;
 		`}
-		${({variant = 'pause'}) =>
+		${({variant}) =>
 		variant === 'pause' &&
 		css`
 			display: flex;
@@ -27,7 +25,7 @@ const StyledForm = styled.form`
 			align-items: center;
 			gap: 80px;
 		`}
-		${({variant = 'setpause'}) =>
+		${({variant}) =>
 		variant === 'setpause' &&
 		css`
 			display: flex;

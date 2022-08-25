@@ -1,8 +1,8 @@
 const PlayIconMain = () => {
 	return (
 		<svg
-			width="62"
-			height="62"
+			width="60"
+			height="60"
 			viewBox="0 0 25 25"
 			fill="none"
 			xmlns="http://www.w3.org/2000/svg"

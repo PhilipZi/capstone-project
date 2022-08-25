@@ -1,40 +1,41 @@
 import styled, {css} from 'styled-components';
 
-const StyledCards = styled.div`
+const StyledCard = styled.div`
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
 	min-width: 260px;
-	padding: 3px 10px;
+	height: 54px;
+	padding: 12px 10px;
 	border: none;
 	border-radius: 7px;
 	cursor: pointer;
-	${({variant = 'exerise'}) =>
+	${({variant}) =>
 		variant === 'exercise' &&
 		css`
 			background-color: #acebaa;
 		`}
 
-	${({variant = 'repetition'}) =>
+	${({variant}) =>
 		variant === 'repetition' &&
 		css`
 			background-color: #9edbee;
 		`}
-		${({variant = 'pause'}) =>
+		${({variant}) =>
 		variant === 'pause' &&
 		css`
 			background-color: #f68787;
 		`}
-		${({variant = 'sets'}) =>
+		${({variant}) =>
 		variant === 'sets' &&
 		css`
 			background-color: #cfcfc9;
 		`}
 
-		${({variant = 'setpause'}) =>
+		${({variant}) =>
 		variant === 'setpause' &&
 		css`
 			background-color: #f8ed91;
 		`}
 `;
-export default StyledCards;
+export default StyledCard;
