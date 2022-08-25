@@ -48,8 +48,22 @@ export default function SetPauseForm() {
 			<StyledForm onSubmit={handleSubmit} variant="setpause">
 				<Timer minutes={minutes} seconds={seconds} />
 				<div>
-					<InputRange id="min" value={minutes} onChange={handleMinutes} name="minutes" />
-					<InputRange id="sec" value={seconds} onChange={handleSeconds} name="seconds" />
+					<label htmlFor="min">
+						<InputRange
+							id="min"
+							value={minutes}
+							onChange={handleMinutes}
+							name="minutes"
+						/>
+					</label>
+					<label htmlFor="sec">
+						<InputRange
+							id="sec"
+							value={seconds}
+							onChange={handleSeconds}
+							name="seconds"
+						/>
+					</label>
 				</div>
 				<SubmitButton />
 			</StyledForm>
