@@ -1,5 +1,6 @@
 import Head from 'next/head';
 
+import CountDownButton from '../components/CountDownButton';
 import ExerciseCard from '../components/ExerciseCard';
 import BlackArrowDown from '../components/Icons/BlackArrowDown';
 import PauseCard from '../components/PauseCard';
@@ -16,6 +17,7 @@ export default function HomePage() {
 				<meta key="description" name="description" content="This is my project" />
 			</Head>
 			<StyledSetupContainer>
+				<CountDownButton />
 				<p>click these buttons to configurate your setup</p>
 				<BlackArrowDown />
 				<ExerciseCard />
