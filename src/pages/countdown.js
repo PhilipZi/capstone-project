@@ -8,15 +8,15 @@ import useStore from '../hooks/useStore';
 export default function CountDown() {
 	const currentExercise = useStore(state => state.currentExercise);
 
-	const numElements = currentExercise.repetition;
+	const amountRepetitions = currentExercise.repetition;
 
 	const exercises = useMemo(() => {
 		const _exercises = [];
-		for (let i = 0; i < numElements; i++) {
+		for (let i = 0; i < amountRepetitions; i++) {
 			_exercises.push(() => (
 				<div>
 					<ExerciseCard />
-					{i < numElements - 1 &&
+					{i < amountRepetitions - 1 &&
 					(currentExercise.pause.minutes > 0 || currentExercise.pause.seconds > 0) ? (
 						<PauseCard />
 					) : (
@@ -27,7 +27,7 @@ export default function CountDown() {
 		}
 
 		return _exercises;
-	}, [numElements, currentExercise]);
+	}, [amountRepetitions, currentExercise]);
 
 	return (
 		<>
