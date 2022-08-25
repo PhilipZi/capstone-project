@@ -23,7 +23,7 @@ export default function SetPauseForm() {
 		setSeconds(Number(event.target.value));
 	}
 
-	const setSetPause = useStore(state => state.setSetPause);
+	const setPauseSets = useStore(state => state.setPauseSets);
 
 	function handleSubmit(event) {
 		event.preventDefault();
@@ -34,7 +34,7 @@ export default function SetPauseForm() {
 			minutes: timeMin,
 			seconds: timeSec,
 		};
-		setSetPause(timeObjSetPause);
+		setPauseSets(timeObjSetPause);
 		router.back();
 	}
 	return (

@@ -36,10 +36,10 @@ const useStore = create(set => ({
 			};
 		});
 	},
-	setSetPause: newSetPause => {
+	setPauseSets: newPauseSets => {
 		set(state => {
 			return {
-				currentExercise: {...state.currentExercise, setPause: newSetPause},
+				currentExercise: {...state.currentExercise, setPause: newPauseSets},
 			};
 		});
 	},
