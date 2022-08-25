@@ -10,23 +10,23 @@ const StyledCard = styled.div`
 	border: none;
 	border-radius: 7px;
 	cursor: pointer;
-	${({variant = 'exerise'}) =>
+	${({variant}) =>
 		variant === 'exercise' &&
 		css`
 			background-color: #acebaa;
 		`}
 
-	${({variant = 'repetition'}) =>
+	${({variant}) =>
 		variant === 'repetition' &&
 		css`
 			background-color: #9edbee;
 		`}
-		${({variant = 'pause'}) =>
+		${({variant}) =>
 		variant === 'pause' &&
 		css`
 			background-color: #f68787;
 		`}
-		${({variant = 'sets'}) =>
+		${({variant}) =>
 		variant === 'sets' &&
 		css`
 			background-color: #cfcfc9;
