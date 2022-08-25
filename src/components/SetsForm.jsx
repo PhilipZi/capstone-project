@@ -5,7 +5,7 @@ import {useState} from 'react';
 import useStore from '../hooks/useStore';
 
 import MinusIcon from './Icons/MinusIcon';
-import PlusIcon from './Icons/PlusIcon';
+import PlusIcon from './Icons/plusIcon';
 import RepetitionIcon from './Icons/RepetitionIcon';
 import MoveBackButton from './MoveBackButton';
 import StyledButton from './StyledButtons';
