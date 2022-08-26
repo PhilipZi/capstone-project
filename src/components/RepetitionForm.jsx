@@ -15,7 +15,7 @@ import SubmitButton from './SubmitButton';
 
 export default function RepetitionForm() {
 	const router = useRouter();
-	const [repetitionCounter, setRepetitionCounter] = useState(0);
+	const [repetitionCounter, setRepetitionCounter] = useState(1);
 	function decrementRepetition() {
 		setRepetitionCounter(repetitionCounter - 1);
 	}
@@ -44,7 +44,7 @@ export default function RepetitionForm() {
 				<StyledButton
 					aria-label="decrement"
 					onClick={decrementRepetition}
-					disabled={repetitionCounter === 0}
+					disabled={repetitionCounter === 1}
 					type="button"
 					variant="plus"
 				>

@@ -14,7 +14,7 @@ import StyledInput from './StyledInput';
 import SubmitButton from './SubmitButton';
 export default function SetsForm() {
 	const router = useRouter();
-	const [setsCounter, setSetsCounter] = useState(0);
+	const [setsCounter, setSetsCounter] = useState(1);
 
 	function decrementRepetition() {
 		setSetsCounter(setsCounter - 1);
@@ -44,7 +44,7 @@ export default function SetsForm() {
 				<StyledButton
 					aria-label="decrement"
 					onClick={decrementRepetition}
-					disabled={setsCounter === 0}
+					disabled={setsCounter === 1}
 					type="button"
 					variant="plus"
 				>

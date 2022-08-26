@@ -3,9 +3,9 @@ import create from 'zustand';
 const useStore = create(set => ({
 	currentExercise: {
 		exercise: {minutes: 0, seconds: 0},
-		repetition: 0,
+		repetition: 1,
 		pause: {minutes: 0, seconds: 0},
-		sets: 0,
+		sets: 1,
 		setPause: {minutes: 0, seconds: 0},
 	},
 	setExercise: newExercise => {
