@@ -17,7 +17,7 @@ export default function TimerCard({variant, minutes, seconds}) {
 					<SetPauseIcon />
 				)}
 				<p>{variant}</p>
-				{minutes > 0 && seconds > 0 ? (
+				{minutes > 0 || seconds > 0 ? (
 					<a>
 						{minutes.toString().padStart(2, '0')}:{seconds.toString().padStart(2, '0')}
 					</a>

@@ -9,8 +9,8 @@ import useStore from '../hooks/useStore';
 export default function TimerContainer() {
 	const currentExercise = useStore(state => state.currentExercise);
 
-	const [minutes, setMinutes] = useState(0);
-	const [seconds, setSeconds] = useState(0);
+	const [minutes, setMinutes] = useState(currentExercise.exercise.minutes);
+	const [seconds, setSeconds] = useState(currentExercise.exercise.seconds);
 
 	const timers = useMemo(() => {
 		const _sets = [];
@@ -56,16 +56,16 @@ export default function TimerContainer() {
 	]);
 
 	useEffect(() => {
-		setInterval(() => {
+		const bla = setInterval(() => {
 			if (minutes === 0 && seconds === 0) timers.unshift();
 			else if (seconds === 0) {
-				setMinutes(minutes - 1);
+				setMinutes(minutes => minutes - 1);
 				setSeconds(59);
 			} else {
-				setSeconds(seconds - 1);
+				setSeconds(seconds => seconds - 1);
 			}
 		}, 1000);
-		return () => clearInterval(timers);
+		return () => clearInterval(bla);
 	}, [minutes, seconds, timers]);
 
 	return (
