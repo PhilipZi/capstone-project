@@ -16,10 +16,16 @@ const StyledButton = styled.button`
 	${({variant = 'goback'}) =>
 		variant === 'goback' &&
 		css`
+			position: fixed;
 			padding-left: 20px;
 		`}
 	${({variant = 'plus'}) =>
 		variant === 'plus' &&
+		css`
+			padding: 0;
+		`}
+		${({variant = 'play'}) =>
+		variant === 'play' &&
 		css`
 			padding: 0;
 		`}

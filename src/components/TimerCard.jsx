@@ -27,7 +27,11 @@ export default function TimerCard({variant, minutes, seconds, running, onFinish}
 
 	return (
 		<Link href="/exercise-form">
-			<StyledCard variant={variant} finish={_minutes === 0 && _seconds === 0}>
+			<StyledCard
+				variant={variant}
+				finish={_minutes === 0 && _seconds === 0}
+				running={running}
+			>
 				{variant === 'exercise' ? (
 					<PlayIcon />
 				) : variant === 'pause' ? (

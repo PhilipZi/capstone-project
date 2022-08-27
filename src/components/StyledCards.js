@@ -45,5 +45,10 @@ const StyledCard = styled.div`
 			max-height: 0;
 			padding: 0;
 		`}
+		${({running}) =>
+		running &&
+		css`
+			border: solid black;
+		`}
 `;
 export default StyledCard;

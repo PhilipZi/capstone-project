@@ -46,7 +46,7 @@ export default function PauseForm() {
 				</StyledH1>
 			</StyledHeader>
 			<MoveBackButton />
-			<StyledForm onSubmit={handleSubmit} variant="pause">
+			<StyledForm onSubmit={handleSubmit} variant="time">
 				<Timer minutes={minutes} seconds={seconds} />
 				<div>
 					<label htmlFor="min">

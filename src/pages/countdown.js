@@ -1,6 +1,10 @@
 import {useMemo, useState} from 'react';
 
+import DumbbellIcon from '../components/Icons/DumbbellIcon';
 import MoveBackButton from '../components/MoveBackButton';
+import NavigationBar from '../components/NavigationBar';
+import {StyledHeader, StyledH1} from '../components/StyledHeader';
+import StyledLayout from '../components/StyledLayout';
 import TimerCard from '../components/TimerCard';
 import useStore from '../hooks/useStore';
 
@@ -52,20 +56,31 @@ export default function TimerContainer() {
 	]);
 
 	return (
-		<div>
+		<StyledLayout>
 			<MoveBackButton />
-			{timers.map((timer, idx) => (
-				<TimerCard
-					key={idx}
-					variant={timer.variant}
-					minutes={timer.minutes}
-					seconds={timer.seconds}
-					running={currentIndex === idx}
-					onFinish={() => {
-						setCurrentIndex(currentIndex + 1);
-					}}
-				/>
-			))}
-		</div>
+			<StyledHeader>
+				<StyledH1>
+					<DumbbellIcon />
+					Your Workout
+					<DumbbellIcon />
+				</StyledH1>
+			</StyledHeader>
+
+			<div>
+				{timers.map((timer, idx) => (
+					<TimerCard
+						key={idx}
+						variant={timer.variant}
+						minutes={timer.minutes}
+						seconds={timer.seconds}
+						running={currentIndex === idx}
+						onFinish={() => {
+							setCurrentIndex(currentIndex + 1);
+						}}
+					/>
+				))}
+			</div>
+			<NavigationBar />
+		</StyledLayout>
 	);
 }
