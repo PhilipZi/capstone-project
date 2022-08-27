@@ -1,6 +1,7 @@
 import {useMemo, useState} from 'react';
 
 import DumbbellIcon from '../components/Icons/DumbbellIcon';
+import StyledDumbbellIcon from '../components/Icons/StyledDumbbellIcon';
 import MoveBackButton from '../components/MoveBackButton';
 import NavigationBar from '../components/NavigationBar';
 import {StyledHeader, StyledH1} from '../components/StyledHeader';
@@ -60,9 +61,13 @@ export default function TimerContainer() {
 			<MoveBackButton />
 			<StyledHeader>
 				<StyledH1>
-					<DumbbellIcon />
+					<StyledDumbbellIcon>
+						<DumbbellIcon />
+					</StyledDumbbellIcon>
 					Your Workout
-					<DumbbellIcon />
+					<StyledDumbbellIcon variant="rotated">
+						<DumbbellIcon />
+					</StyledDumbbellIcon>
 				</StyledH1>
 			</StyledHeader>
 

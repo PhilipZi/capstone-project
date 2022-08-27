@@ -39,7 +39,7 @@ export default function TimerCard({variant, minutes, seconds, running, onFinish}
 				) : (
 					<SetPauseIcon />
 				)}
-				<p>{variant}</p>
+
 				{_minutes > 0 || _seconds > 0 ? (
 					<a>
 						{_minutes.toString().padStart(2, '0')}:
@@ -48,6 +48,7 @@ export default function TimerCard({variant, minutes, seconds, running, onFinish}
 				) : (
 					'00:00'
 				)}
+				<p>{variant}</p>
 			</StyledCard>
 		</Link>
 	);
