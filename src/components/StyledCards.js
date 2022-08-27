@@ -37,5 +37,13 @@ const StyledCard = styled.div`
 		css`
 			background-color: #f8ed91;
 		`}
+		${({finish}) =>
+		finish &&
+		css`
+			transition: opacity 0.3s ease, max-height 0.5s 0.3s ease;
+			opacity: 0;
+			max-height: 0;
+			padding: 0;
+		`}
 `;
 export default StyledCard;

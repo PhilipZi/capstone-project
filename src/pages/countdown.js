@@ -1,16 +1,12 @@
-import {useMemo} from 'react';
-import {useEffect} from 'react';
-import {useState} from 'react';
+import {useMemo, useState} from 'react';
 
 import MoveBackButton from '../components/MoveBackButton';
 import TimerCard from '../components/TimerCard';
 import useStore from '../hooks/useStore';
 
 export default function TimerContainer() {
+	const [currentIndex, setCurrentIndex] = useState(0);
 	const currentExercise = useStore(state => state.currentExercise);
-
-	const [minutes, setMinutes] = useState(currentExercise.exercise.minutes);
-	const [seconds, setSeconds] = useState(currentExercise.exercise.seconds);
 
 	const timers = useMemo(() => {
 		const _sets = [];
@@ -30,7 +26,7 @@ export default function TimerContainer() {
 						minutes: currentExercise.pause.minutes,
 						seconds: currentExercise.pause.seconds,
 					});
-				} else '';
+				}
 			}
 			if (
 				sets < currentExercise.sets - 1 &&
@@ -41,7 +37,7 @@ export default function TimerContainer() {
 					minutes: currentExercise.setPause.minutes,
 					seconds: currentExercise.setPause.seconds,
 				});
-			} else '';
+			}
 		}
 		return _sets;
 	}, [
@@ -55,19 +51,6 @@ export default function TimerContainer() {
 		currentExercise.sets,
 	]);
 
-	useEffect(() => {
-		const bla = setInterval(() => {
-			if (minutes === 0 && seconds === 0) timers.unshift();
-			else if (seconds === 0) {
-				setMinutes(minutes => minutes - 1);
-				setSeconds(59);
-			} else {
-				setSeconds(seconds => seconds - 1);
-			}
-		}, 1000);
-		return () => clearInterval(bla);
-	}, [minutes, seconds, timers]);
-
 	return (
 		<div>
 			<MoveBackButton />
@@ -75,8 +58,12 @@ export default function TimerContainer() {
 				<TimerCard
 					key={idx}
 					variant={timer.variant}
-					minutes={idx === 0 ? minutes : timer.minutes}
-					seconds={idx === 0 ? seconds : timer.seconds}
+					minutes={timer.minutes}
+					seconds={timer.seconds}
+					running={currentIndex === idx}
+					onFinish={() => {
+						setCurrentIndex(currentIndex + 1);
+					}}
 				/>
 			))}
 		</div>
