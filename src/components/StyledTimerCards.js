@@ -1,6 +1,6 @@
 import styled, {css} from 'styled-components';
 
-const StyledCard = styled.div`
+const StyledTimerCard = styled.div`
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
@@ -37,5 +37,18 @@ const StyledCard = styled.div`
 		css`
 			background: #fef15f;
 		`}
+		${({finish}) =>
+		finish &&
+		css`
+			transition: opacity 0s ease, max-height 0s 0s ease;
+			opacity: 0;
+			max-height: 0;
+			padding: 0;
+		`}
+		${({running}) =>
+		running &&
+		css`
+			border: solid #5b0990;
+		`}
 `;
-export default StyledCard;
+export default StyledTimerCard;
