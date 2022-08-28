@@ -47,7 +47,13 @@ const StyledCard = styled.div`
 		${({variant}) =>
 		variant === 'sets' &&
 		css`
-			background-color: #cfcfc9;
+			background: rgb(242, 242, 242);
+			background: radial-gradient(
+				circle,
+				rgba(242, 242, 242, 1) 0%,
+				rgba(196, 201, 204, 1) 49%,
+				rgba(180, 184, 187, 1) 100%
+			); ;
 		`}
 
 		${({variant}) =>
