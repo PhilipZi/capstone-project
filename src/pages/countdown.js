@@ -1,16 +1,14 @@
-import {useMemo, useState} from 'react';
+import {useMemo} from 'react';
 
 import DumbbellIcon from '../components/Icons/DumbbellIcon';
 import StyledDumbbellIcon from '../components/Icons/StyledDumbbellIcon';
 import MoveBackButton from '../components/MoveBackButton';
-import NavigationBar from '../components/NavigationBar';
 import {StyledHeader, StyledH1} from '../components/StyledHeader';
 import StyledLayout from '../components/StyledLayout';
 import TimerCard from '../components/TimerCard';
 import useStore from '../hooks/useStore';
 
 export default function TimerContainer() {
-	const [currentIndex, setCurrentIndex] = useState(0);
 	const currentExercise = useStore(state => state.currentExercise);
 
 	const timers = useMemo(() => {
@@ -78,14 +76,9 @@ export default function TimerContainer() {
 						variant={timer.variant}
 						minutes={timer.minutes}
 						seconds={timer.seconds}
-						running={currentIndex === idx}
-						onFinish={() => {
-							setCurrentIndex(currentIndex + 1);
-						}}
 					/>
 				))}
 			</div>
-			<NavigationBar />
 		</StyledLayout>
 	);
 }
