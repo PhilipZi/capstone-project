@@ -17,6 +17,7 @@ const StyledButton = styled.button`
 		variant === 'goback' &&
 		css`
 			position: fixed;
+			z-index: 3;
 			padding-left: 20px;
 		`}
 	${({variant = 'plus'}) =>

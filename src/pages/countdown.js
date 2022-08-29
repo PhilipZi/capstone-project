@@ -6,6 +6,8 @@ import MoveBackButton from '../components/MoveBackButton';
 import NavigationBar from '../components/NavigationBar';
 import {StyledHeader, StyledH1} from '../components/StyledHeader';
 import StyledLayout from '../components/StyledLayout';
+import StyledTimerCardsContainer from '../components/StyledTimerCardsContainer';
+import StyledBorder from '../components/StyledTransparentBorder';
 import TimerCard from '../components/TimerCard';
 import useStore from '../hooks/useStore';
 
@@ -18,7 +20,7 @@ export default function TimerContainer() {
 		for (let sets = 0; sets < currentExercise.sets; sets++) {
 			for (let repition = 0; repition < currentExercise.repetition; repition++) {
 				_sets.push({
-					variant: 'exercise',
+					variant: 'Exercise',
 					minutes: currentExercise.exercise.minutes,
 					seconds: currentExercise.exercise.seconds,
 				});
@@ -27,7 +29,7 @@ export default function TimerContainer() {
 					(currentExercise.pause.minutes > 0 || currentExercise.pause.seconds > 0)
 				) {
 					_sets.push({
-						variant: 'pause',
+						variant: 'Pause',
 						minutes: currentExercise.pause.minutes,
 						seconds: currentExercise.pause.seconds,
 					});
@@ -38,7 +40,7 @@ export default function TimerContainer() {
 				(currentExercise.setPause.minutes > 0 || currentExercise.setPause.seconds > 0)
 			) {
 				_sets.push({
-					variant: 'setpause',
+					variant: 'Setpause',
 					minutes: currentExercise.setPause.minutes,
 					seconds: currentExercise.setPause.seconds,
 				});
@@ -58,8 +60,9 @@ export default function TimerContainer() {
 
 	return (
 		<StyledLayout>
+			<StyledBorder />
 			<MoveBackButton />
-			<StyledHeader>
+			<StyledHeader variant="counter">
 				<StyledH1>
 					<StyledDumbbellIcon>
 						<DumbbellIcon />
@@ -71,7 +74,7 @@ export default function TimerContainer() {
 				</StyledH1>
 			</StyledHeader>
 
-			<div>
+			<StyledTimerCardsContainer>
 				{timers.map((timer, idx) => (
 					<TimerCard
 						key={idx}
@@ -84,7 +87,7 @@ export default function TimerContainer() {
 						}}
 					/>
 				))}
-			</div>
+			</StyledTimerCardsContainer>
 			<NavigationBar />
 		</StyledLayout>
 	);
