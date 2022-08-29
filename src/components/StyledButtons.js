@@ -27,7 +27,10 @@ const StyledButton = styled.button`
 		${({variant = 'play'}) =>
 		variant === 'play' &&
 		css`
-			padding: 0;
+			position: absolute;
+			right: 10%;
+			top: 50%;
+			transform: translate(-50%, -50%);
 		`}
 `;
 
