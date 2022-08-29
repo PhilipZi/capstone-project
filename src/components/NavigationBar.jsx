@@ -8,15 +8,19 @@ import StyledNavigationBar from './StyledNavigationBar';
 export default function NavigationBar() {
 	const changeToTrue = useStore(state => state.changeToTrue);
 	const changeToFalse = useStore(state => state.changeToFalse);
+	const timerOn = useStore(state => state.timerOn);
 
 	return (
 		<StyledNavigationBar>
-			<StyledButton variant="play" onClick={changeToTrue}>
-				<PlayIconNavbar />
-			</StyledButton>
-			<StyledButton variant="play" onClick={changeToFalse}>
-				<StopIcon />
-			</StyledButton>
+			{!timerOn ? (
+				<StyledButton variant="play" onClick={changeToTrue}>
+					<PlayIconNavbar />
+				</StyledButton>
+			) : (
+				<StyledButton variant="play" onClick={changeToFalse}>
+					<StopIcon />
+				</StyledButton>
+			)}
 		</StyledNavigationBar>
 	);
 }

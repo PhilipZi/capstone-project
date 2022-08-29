@@ -7,7 +7,6 @@ import NavigationBar from '../components/NavigationBar';
 import {StyledHeader, StyledH1} from '../components/StyledHeader';
 import StyledLayout from '../components/StyledLayout';
 import StyledTimerCardsContainer from '../components/StyledTimerCardsContainer';
-import StyledBorder from '../components/StyledTransparentBorder';
 import TimerCard from '../components/TimerCard';
 import useStore from '../hooks/useStore';
 
@@ -60,8 +59,6 @@ export default function TimerContainer() {
 
 	return (
 		<StyledLayout>
-			<StyledBorder />
-
 			<StyledHeader variant="counter">
 				<MoveBackButton />
 				<StyledH1>

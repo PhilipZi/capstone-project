@@ -10,6 +10,11 @@ const StyledTimerCard = styled.div`
 	padding: 12px 10px;
 	border: none;
 	border-radius: 7px;
+	${({running}) =>
+		running &&
+		css`
+			border: 6px solid red;
+		`}
 	${({variant}) =>
 		variant === 'Exercise' &&
 		css`

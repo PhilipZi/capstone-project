@@ -1,4 +1,5 @@
 import {useEffect, useState} from 'react';
+import useSound from 'use-sound';
 
 import useStore from '../hooks/useStore';
 
@@ -13,13 +14,16 @@ export default function TimerCard({variant, minutes, seconds, running, onFinish}
 	const [_seconds, setSeconds] = useState(seconds);
 
 	const timerOn = useStore(state => state.timerOn);
+	const [beep] = useSound('/Sounds/beep3.mp3', {volume: 0.75});
 
 	useEffect(() => {
 		if (!running) return;
 		const timer = setInterval(() => {
 			if (timerOn) {
-				if (_minutes === 0 && _seconds === 0) {
+				if (_minutes === 0 && _seconds === 1) {
+					beep();
 					onFinish();
+					setSeconds(0);
 				} else if (_seconds === 0) {
 					setMinutes(_minutes - 1);
 					setSeconds(59);
@@ -31,7 +35,7 @@ export default function TimerCard({variant, minutes, seconds, running, onFinish}
 			}
 		}, 1000);
 		return () => clearInterval(timer);
-	}, [_minutes, _seconds, running, onFinish, timerOn]);
+	}, [_minutes, _seconds, running, onFinish, timerOn, beep]);
 
 	return (
 		<StyledTimerCard
