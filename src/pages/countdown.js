@@ -61,8 +61,9 @@ export default function TimerContainer() {
 	return (
 		<StyledLayout>
 			<StyledBorder />
-			<MoveBackButton />
+
 			<StyledHeader variant="counter">
+				<MoveBackButton />
 				<StyledH1>
 					<StyledDumbbellIcon>
 						<DumbbellIcon />

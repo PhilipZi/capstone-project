@@ -10,6 +10,7 @@ const StyledHeader = styled.header`
 			position: fixed;
 			z-index: 2;
 			top: 0;
+			left: 0;
 			width: 100%;
 			background: rgb(26, 106, 164);
 			background: linear-gradient(0deg, rgba(26, 106, 164, 1) 16%, rgba(0, 212, 255, 1) 100%);
