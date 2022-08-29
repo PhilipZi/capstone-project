@@ -18,7 +18,6 @@ export default function HomePage() {
 			</Head>
 			<StyledSetupContainer>
 				<CountDownButton />
-
 				<ExerciseCard />
 				<RepetitionCard />
 				<PauseCard />

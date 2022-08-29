@@ -7,11 +7,14 @@ const StyledHeader = styled.header`
 	${({variant}) =>
 		variant === 'counter' &&
 		css`
+			color: #8f5ffe;
 			position: fixed;
 			z-index: 2;
 			top: 0;
 			left: 0;
 			width: 100%;
+			border-bottom-left-radius: 14px;
+			border-bottom-right-radius: 14px;
 
 			background: white;
 		`}

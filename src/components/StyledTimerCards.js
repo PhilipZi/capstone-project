@@ -10,6 +10,7 @@ const StyledTimerCard = styled.div`
 	padding: 12px 10px;
 	border: none;
 	border-radius: 7px;
+	box-shadow: -4px 6px 8px 2px rgba(150, 228, 147, 0.42);
 	${({running}) =>
 		running &&
 		css`
