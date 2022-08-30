@@ -43,6 +43,9 @@ const useStore = create(set => ({
 			};
 		});
 	},
+	timerOn: true,
+	changeToTrue: () => set(state => ({timerOn: (state.timerOn = true)})),
+	changeToFalse: () => set(state => ({timerOn: (state.timerOn = false)})),
 }));
 
 // const useStore = create(set => ({

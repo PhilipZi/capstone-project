@@ -36,11 +36,11 @@ export default function SetsForm() {
 		<>
 			<StyledHeader>
 				<StyledH1>
-					<RepetitionIcon /> Repetition
+					<RepetitionIcon /> Sets
 				</StyledH1>
 			</StyledHeader>
 			<MoveBackButton />
-			<StyledForm variant="repetition" onSubmit={handleSubmit}>
+			<StyledForm variant="repetitionSets" onSubmit={handleSubmit}>
 				<StyledButton
 					aria-label="decrement"
 					onClick={decrementRepetition}

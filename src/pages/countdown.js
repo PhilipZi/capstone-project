@@ -1,14 +1,16 @@
-import {useMemo} from 'react';
+import {useMemo, useState} from 'react';
 
 import DumbbellIcon from '../components/Icons/DumbbellIcon';
 import StyledDumbbellIcon from '../components/Icons/StyledDumbbellIcon';
 import MoveBackButton from '../components/MoveBackButton';
 import {StyledHeader, StyledH1} from '../components/StyledHeader';
 import StyledLayout from '../components/StyledLayout';
+import StyledTimerCardsContainer from '../components/StyledTimerCardsContainer';
 import TimerCard from '../components/TimerCard';
 import useStore from '../hooks/useStore';
 
 export default function TimerContainer() {
+	const [currentIndex, setCurrentIndex] = useState(0);
 	const currentExercise = useStore(state => state.currentExercise);
 
 	const timers = useMemo(() => {
@@ -16,7 +18,7 @@ export default function TimerContainer() {
 		for (let sets = 0; sets < currentExercise.sets; sets++) {
 			for (let repition = 0; repition < currentExercise.repetition; repition++) {
 				_sets.push({
-					variant: 'exercise',
+					variant: 'Exercise',
 					minutes: currentExercise.exercise.minutes,
 					seconds: currentExercise.exercise.seconds,
 				});
@@ -25,7 +27,7 @@ export default function TimerContainer() {
 					(currentExercise.pause.minutes > 0 || currentExercise.pause.seconds > 0)
 				) {
 					_sets.push({
-						variant: 'pause',
+						variant: 'Pause',
 						minutes: currentExercise.pause.minutes,
 						seconds: currentExercise.pause.seconds,
 					});
@@ -36,7 +38,7 @@ export default function TimerContainer() {
 				(currentExercise.setPause.minutes > 0 || currentExercise.setPause.seconds > 0)
 			) {
 				_sets.push({
-					variant: 'setpause',
+					variant: 'Setpause',
 					minutes: currentExercise.setPause.minutes,
 					seconds: currentExercise.setPause.seconds,
 				});
@@ -56,8 +58,8 @@ export default function TimerContainer() {
 
 	return (
 		<StyledLayout>
-			<MoveBackButton />
-			<StyledHeader>
+			<StyledHeader variant="counter">
+				<MoveBackButton />
 				<StyledH1>
 					<StyledDumbbellIcon>
 						<DumbbellIcon />
@@ -69,16 +71,20 @@ export default function TimerContainer() {
 				</StyledH1>
 			</StyledHeader>
 
-			<div>
+			<StyledTimerCardsContainer>
 				{timers.map((timer, idx) => (
 					<TimerCard
 						key={idx}
 						variant={timer.variant}
 						minutes={timer.minutes}
 						seconds={timer.seconds}
+						running={currentIndex === idx}
+						onFinish={() => {
+							setCurrentIndex(currentIndex + 1);
+						}}
 					/>
 				))}
-			</div>
+			</StyledTimerCardsContainer>
 		</StyledLayout>
 	);
 }

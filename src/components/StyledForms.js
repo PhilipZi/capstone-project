@@ -2,36 +2,21 @@ import styled, {css} from 'styled-components';
 
 const StyledForm = styled.form`
 	${({variant}) =>
-		variant === 'exercise' &&
+		variant === 'time' &&
 		css`
 			display: flex;
 			flex-direction: column;
 			align-items: center;
 			gap: 80px;
+			padding-top: 30px;
 		`}
 	${({variant}) =>
-		variant === 'repetition' &&
+		variant === 'repetitionSets' &&
 		css`
 			display: flex;
 			justify-content: center;
 			align-items: center;
-			padding-top: 100px;
-		`}
-		${({variant}) =>
-		variant === 'pause' &&
-		css`
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			gap: 80px;
-		`}
-		${({variant}) =>
-		variant === 'setpause' &&
-		css`
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			gap: 80px;
+			padding-top: 150px;
 		`}
 `;
 

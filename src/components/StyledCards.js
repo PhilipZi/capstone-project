@@ -2,6 +2,7 @@ import styled, {css} from 'styled-components';
 
 const StyledCard = styled.div`
 	display: flex;
+	position: relative;
 	align-items: center;
 	justify-content: space-between;
 	min-width: 260px;

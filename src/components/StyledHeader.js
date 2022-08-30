@@ -1,9 +1,23 @@
-import styled from 'styled-components';
+import styled, {css} from 'styled-components';
 
 const StyledHeader = styled.header`
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	${({variant}) =>
+		variant === 'counter' &&
+		css`
+			color: #8f5ffe;
+			position: fixed;
+			z-index: 2;
+			top: 0;
+			left: 0;
+			width: 100%;
+			border-bottom-left-radius: 14px;
+			border-bottom-right-radius: 14px;
+
+			background: white;
+		`}
 `;
 const StyledH1 = styled.h1`
 	display: flex;

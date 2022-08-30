@@ -46,7 +46,7 @@ export default function ExerciseForm() {
 				</StyledH1>
 			</StyledHeader>
 			<MoveBackButton />
-			<StyledForm onSubmit={handleSubmit} variant="exercise">
+			<StyledForm onSubmit={handleSubmit} variant="time">
 				<Timer minutes={minutes} seconds={seconds} />
 				<div>
 					<label htmlFor="min">
