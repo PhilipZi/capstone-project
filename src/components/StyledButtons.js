@@ -4,7 +4,7 @@ const StyledButton = styled.button`
 	border: none;
 	background-color: transparent;
 	cursor: pointer;
-	${({variant = 'submit'}) =>
+	${({variant}) =>
 		variant === 'submit' &&
 		css`
 			position: absolute;
@@ -13,13 +13,13 @@ const StyledButton = styled.button`
 			height: 40px;
 			width: 50px;
 		`}
-	${({variant = 'goback'}) =>
+	${({variant}) =>
 		variant === 'goback' &&
 		css`
 			position: fixed;
 			padding-left: 20px;
 		`}
-	${({variant = 'plus'}) =>
+	${({variant}) =>
 		variant === 'plus' &&
 		css`
 			padding: 0;
