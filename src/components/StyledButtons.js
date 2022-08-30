@@ -24,6 +24,7 @@ const StyledButton = styled.button`
 		css`
 			padding: 0;
 		`}
+		${({variant = 'play'}) => variant === 'play' && css``}
 `;
 
 export default StyledButton;
