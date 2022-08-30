@@ -14,7 +14,7 @@ export default function TimerCard({variant, minutes, seconds, running, onFinish}
 	const [_seconds, setSeconds] = useState(seconds);
 
 	const timerOn = useStore(state => state.timerOn);
-	const [beep] = useSound('/Sounds/beep3.mp3', {volume: 0.75});
+	const [beep] = useSound('/Sounds/beep3.mp3');
 
 	useEffect(() => {
 		if (!running) return;
