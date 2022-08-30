@@ -2,6 +2,7 @@ import useStore from '../hooks/useStore';
 
 import PauseIconTimer from './Icons/PauseIconTimer';
 import PlayIconNavbar from './Icons/PlayIconNavbar';
+// import SaveIcon from './Icons/SaveIcon';
 import StyledButton from './StyledButtons';
 import StyledNavigationBar from './StyledNavigationBar';
 
@@ -12,6 +13,9 @@ export default function NavigationBar() {
 
 	return (
 		<StyledNavigationBar>
+			{/* <StyledButton>
+				<SaveIcon></SaveIcon>
+			</StyledButton> */}
 			{!timerOn ? (
 				<StyledButton variant="play" onClick={changeToTrue}>
 					<PlayIconNavbar />
