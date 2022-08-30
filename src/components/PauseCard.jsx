@@ -4,6 +4,7 @@ import useStore from '../hooks/useStore';
 
 import PauseIcon from './Icons/PauseIcon';
 import StyledCard from './StyledCards';
+import StyledPCards from './StyledPCards';
 
 export default function PauseCard() {
 	const currentExercise = useStore(state => state.currentExercise);
@@ -12,7 +13,7 @@ export default function PauseCard() {
 		<Link href="/pause-form">
 			<StyledCard variant="pause">
 				<PauseIcon />
-				<p>Pause</p>
+				<StyledPCards>Pause</StyledPCards>
 				{currentExercise.pause ? (
 					<a>
 						{currentExercise.pause.minutes.toString().padStart(2, '0')}:

@@ -40,7 +40,7 @@ export default function SetsForm() {
 				</StyledH1>
 			</StyledHeader>
 			<MoveBackButton />
-			<StyledForm variant="repetition" onSubmit={handleSubmit}>
+			<StyledForm variant="repetitionSets" onSubmit={handleSubmit}>
 				<StyledButton
 					aria-label="decrement"
 					onClick={decrementRepetition}
