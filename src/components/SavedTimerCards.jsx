@@ -15,17 +15,26 @@ export default function SavedTimerCard({
 		<div>
 			<h2>{name}</h2>
 			<ul>
-				<StyledLi>
-					exercise: {minutes}:{seconds}
+				<StyledLi variant="exercise">
+					<span>exercise: </span>
+					{minutes}:{seconds}
 				</StyledLi>
-				<StyledLi> repetition: {repetition}</StyledLi>
-				<StyledLi>
-					pause: {pauseMinutes}:{pauseSeconds}{' '}
+				<StyledLi variant="repetition">
+					{' '}
+					<span>repetition: </span>
+					{repetition}
 				</StyledLi>
-				<StyledLi></StyledLi>
-				<StyledLi>sets: {sets}</StyledLi>
-				<StyledLi>
-					set pause: {setPauseMinutes}:{setPauseSeconds}
+				<StyledLi variant="pause">
+					<span>pause: </span>
+					{pauseMinutes}:{pauseSeconds}{' '}
+				</StyledLi>
+				<StyledLi variant="sets">
+					<span>sets: </span>
+					{sets}
+				</StyledLi>
+				<StyledLi variant="setpause">
+					<span>set pause: </span>
+					{setPauseMinutes}:{setPauseSeconds}
 				</StyledLi>
 			</ul>
 		</div>

@@ -24,6 +24,15 @@ const StyledButton = styled.button`
 		css`
 			padding: 0;
 		`}
+	${({variant}) =>
+		variant === 'delete' &&
+		css`
+			position: absolute;
+			right: 17px;
+			bottom: 2px;
+			padding: 0;
+		`}
+	${({variant}) => variant === 'useExercise' && css``}
 `;
 
 export default StyledButton;
