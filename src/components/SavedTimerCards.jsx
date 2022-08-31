@@ -1,13 +1,32 @@
-export default function SavedTimerCard({name, exercise, repetition, pause, sets, setPause}) {
+import StyledLi from './StyledLi';
+
+export default function SavedTimerCard({
+	name,
+	minutes,
+	seconds,
+	repetition,
+	pauseMinutes,
+	pauseSeconds,
+	sets,
+	setPauseMinutes,
+	setPauseSeconds,
+}) {
 	return (
 		<div>
 			<h2>{name}</h2>
 			<ul>
-				<li>{exercise}</li>
-				<li>{repetition}</li>
-				<li>{pause}</li>
-				<li>{sets}</li>
-				<li>{setPause}</li>
+				<StyledLi>
+					exercise: {minutes}:{seconds}
+				</StyledLi>
+				<StyledLi> repetition: {repetition}</StyledLi>
+				<StyledLi>
+					pause: {pauseMinutes}:{pauseSeconds}{' '}
+				</StyledLi>
+				<StyledLi></StyledLi>
+				<StyledLi>sets: {sets}</StyledLi>
+				<StyledLi>
+					set pause: {setPauseMinutes}:{setPauseSeconds}
+				</StyledLi>
 			</ul>
 		</div>
 	);

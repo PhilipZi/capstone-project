@@ -4,6 +4,7 @@ import useStore from '../hooks/useStore';
 import StyledModalSection from './StyledModalSection';
 
 export default function SaveModal({onCancel}) {
+	const savedExercises = useSavedExercises(state => state.savedExercises);
 	const currentExercise = useStore(state => state.currentExercise);
 	const addNewExercise = useSavedExercises(state => state.addNewExercise);
 
@@ -13,6 +14,7 @@ export default function SaveModal({onCancel}) {
 		addNewExercise({...currentExercise, name: input});
 		onCancel();
 	}
+	console.log(savedExercises);
 
 	return (
 		<StyledModalSection>
