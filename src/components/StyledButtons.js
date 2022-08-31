@@ -32,7 +32,15 @@ const StyledButton = styled.button`
 			bottom: 2px;
 			padding: 0;
 		`}
-	${({variant}) => variant === 'useExercise' && css``}
+		${({variant}) =>
+		variant === 'saved' &&
+		css`
+			position: absolute;
+			top: 40px;
+			left: 30px;
+
+			padding: 0;
+		`}
 `;
 
 export default StyledButton;
