@@ -3,6 +3,7 @@ import {useMemo, useState} from 'react';
 import DumbbellIcon from '../components/Icons/DumbbellIcon';
 import StyledDumbbellIcon from '../components/Icons/StyledDumbbellIcon';
 import MoveBackButton from '../components/MoveBackButton';
+import NavigationBar from '../components/NavigationBar';
 import {StyledHeader, StyledH1} from '../components/StyledHeader';
 import StyledLayout from '../components/StyledLayout';
 import StyledTimerCardsContainer from '../components/StyledTimerCardsContainer';
@@ -85,6 +86,7 @@ export default function TimerContainer() {
 					/>
 				))}
 			</StyledTimerCardsContainer>
+			<NavigationBar />
 		</StyledLayout>
 	);
 }
