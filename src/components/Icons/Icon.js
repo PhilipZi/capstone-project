@@ -7,7 +7,7 @@ const icons = {
 
 const Icon = ({variant, size = '48px', color = 'currentColor', fill = 'black'}) => {
 	return (
-		<svg style={{width: size, color: color, fill: fill}} viewBox="0 0 48 48">
+		<svg style={{width: size, color: color, fill: fill}} viewBox="0 0 24 24">
 			<path fill={color} d={icons[variant]} />
 		</svg>
 	);

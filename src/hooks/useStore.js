@@ -1,4 +1,5 @@
 import create from 'zustand';
+
 //import {persist} from 'zustand/middleware';
 
 const useStore = create(
@@ -10,6 +11,11 @@ const useStore = create(
 			pause: {minutes: 0, seconds: 0},
 			sets: 1,
 			setPause: {minutes: 0, seconds: 0},
+		},
+		loadSaveExercise: savedExercises => {
+			set({
+				currentExercise: savedExercises,
+			});
 		},
 		setExercise: newExercise => {
 			set(state => {

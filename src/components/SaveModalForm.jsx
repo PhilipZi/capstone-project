@@ -1,3 +1,5 @@
+import {nanoid} from 'nanoid';
+
 import useSavedExercises from '../hooks/useSavedExercises';
 import useStore from '../hooks/useStore';
 
@@ -14,7 +16,7 @@ export default function SaveModal({onCancel}) {
 	function handleSave(event) {
 		event.preventDefault();
 		const input = event.target.name.value;
-		addNewExercise({...currentExercise, name: input});
+		addNewExercise({...currentExercise, name: input, id: nanoid()});
 		onCancel();
 	}
 	console.log(savedExercises);
@@ -23,14 +25,14 @@ export default function SaveModal({onCancel}) {
 		<StyledModalSection>
 			<form onSubmit={handleSave}>
 				<h2>Save this workout</h2>
-				<label>describe your workout</label>
+				<label></label>
 
 				<StyledInput
 					variant="savename"
 					type="text"
 					id="name"
 					name="name"
-					placeholder="name"
+					placeholder="Name your workout"
 				></StyledInput>
 
 				<button type="submit">SAVE</button>

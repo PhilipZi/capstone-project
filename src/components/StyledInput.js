@@ -20,7 +20,8 @@ const StyledInput = styled.input`
 		${({variant}) =>
 		variant === 'savename' &&
 		css`
-			padding: 4px;
+			padding: 3px;
+			min-width: 250px;
 			font-size: 18px;
 			border-width: 1px;
 			border-color: #cccccc;
