@@ -29,7 +29,7 @@ const StyledTimerCard = styled.div`
 	${({variant}) =>
 		variant === 'Setpause' &&
 		css`
-			background: #fef15f;
+			background: #ffafaf;
 		`}
 	${({finish}) =>
 		finish &&

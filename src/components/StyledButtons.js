@@ -41,6 +41,11 @@ const StyledButton = styled.button`
 			padding: 0;
 			background-color: transparent;
 		`}
+		${({variant}) =>
+		variant === 'start' &&
+		css`
+			padding-top: 10px;
+		`}
 `;
 
 export default StyledButton;
