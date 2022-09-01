@@ -13,6 +13,7 @@ const StyledSetupContainer = styled.section`
 	border-top-left-radius: 25px;
 	border-top-right-radius: 25px;
 	background-color: white;
+	box-shadow: 0 -6px 10px -4px rgba(0, 0, 0, 0.49);
 `;
 
 export default StyledSetupContainer;

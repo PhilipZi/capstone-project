@@ -11,6 +11,7 @@ const StyledNavigationBar = styled.nav`
 	border-top-left-radius: 14px;
 	border-top-right-radius: 14px;
 	background-color: white;
+	box-shadow: 0 -6px 10px -4px rgba(0, 0, 0, 0.49);
 `;
 
 export default StyledNavigationBar;

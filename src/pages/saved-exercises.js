@@ -20,7 +20,7 @@ export default function SavedExercises() {
 	return (
 		<>
 			<StyledLayout>
-				<StyledHeader>
+				<StyledHeader variant="counter">
 					<MoveBackButtonButton />
 					<StyledH1>Saved Exercises</StyledH1>
 				</StyledHeader>

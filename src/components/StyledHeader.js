@@ -14,6 +14,7 @@ const StyledHeader = styled.header`
 			width: 100%;
 			border-bottom-left-radius: 14px;
 			border-bottom-right-radius: 14px;
+			box-shadow: 0px 6px 10px -4px rgba(0, 0, 0, 0.49);
 
 			background: white;
 		`}
