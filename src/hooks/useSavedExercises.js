@@ -7,11 +7,11 @@ const useSavedExercises = create(set => ({
 			return {savedExercises: [...state.savedExercises, currentExercise]};
 		});
 	},
-	deleteExcercise: name => {
+	deleteExcercise: id => {
 		set(state => {
 			return {
 				savedExercises: state.savedExercises.filter(
-					savedExercises => savedExercises.name !== name
+					savedExercises => savedExercises.id !== id
 				),
 			};
 		});

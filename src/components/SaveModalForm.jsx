@@ -1,3 +1,5 @@
+import {nanoid} from 'nanoid';
+
 import useSavedExercises from '../hooks/useSavedExercises';
 import useStore from '../hooks/useStore';
 
@@ -14,7 +16,7 @@ export default function SaveModal({onCancel}) {
 	function handleSave(event) {
 		event.preventDefault();
 		const input = event.target.name.value;
-		addNewExercise({...currentExercise, name: input});
+		addNewExercise({...currentExercise, name: input, id: nanoid()});
 		onCancel();
 	}
 	console.log(savedExercises);
