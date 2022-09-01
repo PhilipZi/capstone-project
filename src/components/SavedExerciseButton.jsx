@@ -1,6 +1,6 @@
 import {useRouter} from 'next/router';
 
-import SaveIcon from './Icons/SaveIcon';
+import SaveIconGrey from './Icons/SaveIconGrey';
 import StyledButton from './StyledButtons';
 
 export default function SavedExerciseButton() {
@@ -12,7 +12,7 @@ export default function SavedExerciseButton() {
 				router.push('saved-exercises');
 			}}
 		>
-			<SaveIcon />
+			<SaveIconGrey />
 		</StyledButton>
 	);
 }

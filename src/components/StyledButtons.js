@@ -38,8 +38,8 @@ const StyledButton = styled.button`
 			position: absolute;
 			top: 40px;
 			left: 30px;
-
 			padding: 0;
+			background-color: transparent;
 		`}
 `;
 
