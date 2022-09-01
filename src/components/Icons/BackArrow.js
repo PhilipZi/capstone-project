@@ -1,8 +1,8 @@
 const BackArrow = () => {
 	return (
 		<svg
-			width="42"
-			height="42"
+			width="47"
+			height="47"
 			viewBox="0 0 41 42"
 			fill="none"
 			xmlns="http://www.w3.org/2000/svg"
@@ -13,7 +13,7 @@ const BackArrow = () => {
 					cy="20.5"
 					r="13.5"
 					fill="#D9D9D9"
-					fillOpacity="0.6"
+					fillOpacity="0.9"
 					shapeRendering="crispEdges"
 				/>
 			</g>
