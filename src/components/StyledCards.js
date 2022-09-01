@@ -36,7 +36,7 @@ const StyledCard = styled.div`
 		${({variant}) =>
 		variant === 'setpause' &&
 		css`
-			background: #ffafaf;
+			background: #fef15f;
 		`}
 `;
 export default StyledCard;
