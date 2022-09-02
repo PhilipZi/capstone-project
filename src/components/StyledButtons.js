@@ -37,14 +37,18 @@ const StyledButton = styled.button`
 		css`
 			position: absolute;
 			top: 40px;
-			left: 30px;
-			padding: 0;
-			background-color: transparent;
+			left: 0;
+			border-top-right-radius: 20px;
+			border-bottom-right-radius: 20px;
+			padding: 10px 15px 10px 20px;
+			background-color: white;
+			box-shadow: 0px 6px 10px -4px rgba(0, 0, 0, 0.49);
 		`}
 		${({variant}) =>
 		variant === 'start' &&
 		css`
-			padding-top: 10px;
+			padding: 5px;
+			padding-bottom: 0;
 		`}
 `;
 

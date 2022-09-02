@@ -12,7 +12,7 @@ export default function CountDownButton() {
 		<Link href="countdown">
 			<a>
 				<StyledButton variant="start" onClick={changeToFalse}>
-					<Icon variant="play" size="70px" />
+					<Icon variant="play" size="80px" />
 				</StyledButton>
 			</a>
 		</Link>
