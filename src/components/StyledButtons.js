@@ -28,8 +28,8 @@ const StyledButton = styled.button`
 		variant === 'delete' &&
 		css`
 			position: absolute;
-			right: 17px;
-			bottom: 2px;
+			right: 8px;
+			bottom: -2px;
 			padding: 0;
 		`}
 		${({variant}) =>

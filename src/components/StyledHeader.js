@@ -26,4 +26,11 @@ const StyledH1 = styled.h1`
 	gap: 5px;
 `;
 
-export {StyledHeader, StyledH1};
+const StyledH2 = styled.h2`
+	display: flex;
+	align-items: center;
+	margin: 5px 0 10px 10px;
+	font-weight: lighter;
+`;
+
+export {StyledHeader, StyledH1, StyledH2};

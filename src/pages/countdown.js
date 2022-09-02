@@ -13,6 +13,7 @@ import useStore from '../hooks/useStore';
 export default function TimerContainer() {
 	const [currentIndex, setCurrentIndex] = useState(0);
 	const currentExercise = useStore(state => state.currentExercise);
+	const changeToFalse = useStore(state => state.changeToFalse);
 
 	const timers = useMemo(() => {
 		const _sets = [];
@@ -81,7 +82,12 @@ export default function TimerContainer() {
 						seconds={timer.seconds}
 						running={currentIndex === idx}
 						onFinish={() => {
-							setCurrentIndex(currentIndex + 1);
+							{
+								if (currentIndex + 2 === timers.length) {
+									changeToFalse;
+								}
+								setCurrentIndex(currentIndex + 1);
+							}
 						}}
 					/>
 				))}

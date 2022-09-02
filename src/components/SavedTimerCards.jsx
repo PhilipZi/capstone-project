@@ -1,3 +1,4 @@
+import {StyledH2} from './StyledHeader';
 import StyledLi from './StyledLi';
 
 export default function SavedTimerCard({
@@ -13,7 +14,7 @@ export default function SavedTimerCard({
 }) {
 	return (
 		<div>
-			<h2>{name}</h2>
+			<StyledH2>{name}</StyledH2>
 			<ul>
 				<StyledLi variant="exercise">
 					<span>exercise: </span>

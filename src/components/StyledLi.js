@@ -7,7 +7,6 @@ const StyledLi = styled.li`
 	padding: 2px;
 	padding-right: 5px;
 	padding-left: 5px;
-	border-radius: 12px;
 	list-style: none;
 	${({variant}) =>
 		variant === 'exercise' &&
