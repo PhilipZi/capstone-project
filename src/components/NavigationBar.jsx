@@ -25,7 +25,7 @@ export default function NavigationBar() {
 			<StyledButton type="button" onClick={handleVisibility}>
 				<SaveIcon></SaveIcon>
 			</StyledButton>
-			{isShown ? <SaveModalForm onCancel={handleVisibility} /> : ''}
+			{isShown && <SaveModalForm onCancel={handleVisibility} />}
 			{!timerOn ? (
 				<StyledButton variant="play" onClick={changeToTrue}>
 					<PlayIconNavbar />

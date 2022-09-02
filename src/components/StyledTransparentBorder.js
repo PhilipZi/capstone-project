@@ -12,6 +12,7 @@ const StyledBorder = styled.div`
 	border-width: 6px;
 	border-radius: 7px;
 	background-color: transparent;
+	box-shadow: inset 0 0 16px -1px black;
 `;
 
 export default StyledBorder;

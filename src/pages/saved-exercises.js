@@ -28,33 +28,33 @@ export default function SavedExercises() {
 					<MoveBackButtonButton />
 					<StyledH1>Saved Exercises</StyledH1>
 				</StyledHeader>
-				{savedExercises.map(savedE => (
-					<Fragment key={savedE.id}>
+				{savedExercises.map(savedExercise => (
+					<Fragment key={savedExercise.id}>
 						<StyledSavedExerciseContainer>
 							<StyledButton
 								variant="useExercise"
 								onClick={() => {
-									loadSaveExercise(savedE);
+									loadSaveExercise(savedExercise);
 									Router.back();
 									console.log(savedExercises);
 								}}
 							>
 								<SavedTimerCard
-									name={savedE.name}
-									minutes={savedE.exercise.minutes}
-									seconds={savedE.exercise.seconds}
-									repetition={savedE.repetition}
-									pauseMinutes={savedE.pause.minutes}
-									pauseSeconds={savedE.pause.seconds}
-									sets={savedE.sets}
-									setPauseMinutes={savedE.setPause.minutes}
-									setPauseSeconds={savedE.setPause.seconds}
+									name={savedExercise.name}
+									minutes={savedExercise.exercise.minutes}
+									seconds={savedExercise.exercise.seconds}
+									repetition={savedExercise.repetition}
+									pauseMinutes={savedExercise.pause.minutes}
+									pauseSeconds={savedExercise.pause.seconds}
+									sets={savedExercise.sets}
+									setPauseMinutes={savedExercise.setPause.minutes}
+									setPauseSeconds={savedExercise.setPause.seconds}
 								/>
 							</StyledButton>
 							<StyledButton
 								variant="delete"
 								onClick={() => {
-									deleteExcercise(savedE.id);
+									deleteExcercise(savedExercise.id);
 								}}
 							>
 								<DeleteIcon />
