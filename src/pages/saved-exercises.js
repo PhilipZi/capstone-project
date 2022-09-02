@@ -1,3 +1,4 @@
+import dynamic from 'next/dynamic';
 import Router from 'next/router';
 import {Fragment} from 'react';
 
@@ -13,13 +14,16 @@ import useStore from '../hooks/useStore';
 
 export default function SavedExercises() {
 	const savedExercises = useSavedExercises(state => state.savedExercises);
+	const StyledWrapper = dynamic(() => import('../components/StyledWrapper'), {
+		ssr: false,
+	});
 
 	const deleteExcercise = useSavedExercises(state => state.deleteExcercise);
 	const loadSaveExercise = useStore(state => state.loadSaveExercise);
 
 	return (
-		<>
-			<StyledLayout>
+		<StyledWrapper>
+			<StyledLayout variant="saved">
 				<StyledHeader variant="counter">
 					<MoveBackButtonButton />
 					<StyledH1>Saved Exercises</StyledH1>
@@ -59,6 +63,6 @@ export default function SavedExercises() {
 					</Fragment>
 				))}
 			</StyledLayout>
-		</>
+		</StyledWrapper>
 	);
 }
