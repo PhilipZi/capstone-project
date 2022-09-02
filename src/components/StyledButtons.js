@@ -45,10 +45,14 @@ const StyledButton = styled.button`
 			box-shadow: 0px 6px 10px -4px rgba(0, 0, 0, 0.49);
 		`}
 		${({variant}) =>
-		variant === 'start' &&
+		variant === 'countdownButton' &&
 		css`
-			padding: 5px;
-			padding-bottom: 0;
+			padding-top: 10px;
+		`}
+		${({variant}) =>
+		variant === 'modal' &&
+		css`
+			border-radius: 8px;
 		`}
 `;
 

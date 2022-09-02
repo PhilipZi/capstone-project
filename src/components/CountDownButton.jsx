@@ -11,7 +11,7 @@ export default function CountDownButton() {
 	return (
 		<Link href="countdown">
 			<a>
-				<StyledButton variant="start" onClick={changeToFalse}>
+				<StyledButton variant="countdownButton" onClick={changeToFalse}>
 					<Icon variant="play" size="80px" />
 				</StyledButton>
 			</a>

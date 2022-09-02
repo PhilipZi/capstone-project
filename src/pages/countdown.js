@@ -1,7 +1,5 @@
 import {useMemo, useState} from 'react';
 
-import DumbbellIcon from '../components/Icons/DumbbellIcon';
-import StyledDumbbellIcon from '../components/Icons/StyledDumbbellIcon';
 import MoveBackButton from '../components/MoveBackButton';
 import NavigationBar from '../components/NavigationBar';
 import {StyledHeader, StyledH1} from '../components/StyledHeader';
@@ -26,6 +24,8 @@ export default function TimerContainer() {
 				});
 				if (
 					repition < currentExercise.repetition - 1 &&
+					(currentExercise.exercise.minutes > 0 ||
+						currentExercise.exercise.seconds > 0) &&
 					(currentExercise.pause.minutes > 0 || currentExercise.pause.seconds > 0)
 				) {
 					_sets.push({
@@ -37,6 +37,7 @@ export default function TimerContainer() {
 			}
 			if (
 				sets < currentExercise.sets - 1 &&
+				(currentExercise.exercise.minutes > 0 || currentExercise.exercise.seconds > 0) &&
 				(currentExercise.setPause.minutes > 0 || currentExercise.setPause.seconds > 0)
 			) {
 				_sets.push({
@@ -62,15 +63,7 @@ export default function TimerContainer() {
 		<StyledLayout>
 			<StyledHeader variant="counter">
 				<MoveBackButton />
-				<StyledH1>
-					<StyledDumbbellIcon>
-						<DumbbellIcon />
-					</StyledDumbbellIcon>
-					Your Workout
-					<StyledDumbbellIcon variant="rotated">
-						<DumbbellIcon />
-					</StyledDumbbellIcon>
-				</StyledH1>
+				<StyledH1>Your Workout</StyledH1>
 			</StyledHeader>
 
 			<StyledTimerCardsContainer>

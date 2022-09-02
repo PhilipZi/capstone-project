@@ -20,6 +20,7 @@ export default function TimerCard({variant, minutes, seconds, running, onFinish}
 		if (!running) return;
 		const timer = setInterval(() => {
 			if (timerOn) {
+				if (_minutes === 0 && _seconds === 0) return;
 				if (_minutes === 0 && _seconds === 1) {
 					beep();
 					onFinish();

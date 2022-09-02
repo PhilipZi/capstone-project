@@ -9,7 +9,8 @@ const StyledCard = styled.div`
 	height: 54px;
 	padding: 12px 10px;
 	border: none;
-	border-radius: 7px;
+	border-radius: 16px;
+	box-shadow: 0 6px 10px -4px rgba(0, 0, 0, 0.49);
 	cursor: pointer;
 	${({variant}) =>
 		variant === 'exercise' &&
@@ -36,7 +37,7 @@ const StyledCard = styled.div`
 		${({variant}) =>
 		variant === 'setpause' &&
 		css`
-			background: #fef15f;
+			background: #fff078;
 		`}
 `;
 export default StyledCard;
