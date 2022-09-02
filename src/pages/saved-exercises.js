@@ -1,4 +1,4 @@
-import {nanoid} from 'nanoid';
+import dynamic from 'next/dynamic';
 import Router from 'next/router';
 import {Fragment} from 'react';
 
@@ -14,42 +14,47 @@ import useStore from '../hooks/useStore';
 
 export default function SavedExercises() {
 	const savedExercises = useSavedExercises(state => state.savedExercises);
-	const loadSaveExercise = useStore(state => state.loadSaveExercise);
+	const StyledWrapper = dynamic(() => import('../components/StyledWrapper'), {
+		ssr: false,
+	});
+
 	const deleteExcercise = useSavedExercises(state => state.deleteExcercise);
+	const loadSaveExercise = useStore(state => state.loadSaveExercise);
 
 	return (
-		<>
-			<StyledLayout>
-				<StyledHeader>
+		<StyledWrapper>
+			<StyledLayout variant="saved">
+				<StyledHeader variant="counter">
 					<MoveBackButtonButton />
 					<StyledH1>Saved Exercises</StyledH1>
 				</StyledHeader>
-				{savedExercises.map(savedE => (
-					<Fragment key={nanoid()}>
+				{savedExercises.map(savedExercise => (
+					<Fragment key={savedExercise.id}>
 						<StyledSavedExerciseContainer>
 							<StyledButton
 								variant="useExercise"
 								onClick={() => {
-									loadSaveExercise(savedE);
+									loadSaveExercise(savedExercise);
 									Router.back();
+									console.log(savedExercises);
 								}}
 							>
 								<SavedTimerCard
-									name={savedE.name}
-									minutes={savedE.exercise.minutes}
-									seconds={savedE.exercise.seconds}
-									repetition={savedE.repetition}
-									pauseMinutes={savedE.pause.minutes}
-									pauseSeconds={savedE.pause.seconds}
-									sets={savedE.sets}
-									setPauseMinutes={savedE.setPause.minutes}
-									setPauseSeconds={savedE.setPause.seconds}
+									name={savedExercise.name}
+									minutes={savedExercise.exercise.minutes}
+									seconds={savedExercise.exercise.seconds}
+									repetition={savedExercise.repetition}
+									pauseMinutes={savedExercise.pause.minutes}
+									pauseSeconds={savedExercise.pause.seconds}
+									sets={savedExercise.sets}
+									setPauseMinutes={savedExercise.setPause.minutes}
+									setPauseSeconds={savedExercise.setPause.seconds}
 								/>
 							</StyledButton>
 							<StyledButton
 								variant="delete"
 								onClick={() => {
-									deleteExcercise(savedE.id);
+									deleteExcercise(savedExercise.id);
 								}}
 							>
 								<DeleteIcon />
@@ -58,6 +63,6 @@ export default function SavedExercises() {
 					</Fragment>
 				))}
 			</StyledLayout>
-		</>
+		</StyledWrapper>
 	);
 }

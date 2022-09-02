@@ -9,7 +9,6 @@ import StyledModalSection from './StyledModalSection';
 import StyledWhiteAdaptation from './StyledWhiteAdaptation';
 
 export default function SaveModal({onCancel}) {
-	const savedExercises = useSavedExercises(state => state.savedExercises);
 	const currentExercise = useStore(state => state.currentExercise);
 	const addNewExercise = useSavedExercises(state => state.addNewExercise);
 
@@ -19,20 +18,18 @@ export default function SaveModal({onCancel}) {
 		addNewExercise({...currentExercise, name: input, id: nanoid()});
 		onCancel();
 	}
-	console.log(savedExercises);
 
 	return (
 		<StyledModalSection>
 			<form onSubmit={handleSave}>
 				<h2>Save this workout</h2>
-				<label>describe your workout</label>
-
+				<label htmlFor="savename"></label>
 				<StyledInput
 					variant="savename"
 					type="text"
 					id="name"
 					name="name"
-					placeholder="name"
+					placeholder="Name your workout"
 				></StyledInput>
 
 				<button type="submit">SAVE</button>
