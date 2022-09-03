@@ -5,8 +5,9 @@ const StyledSavedExerciseContainer = styled.div`
 	position: relative;
 	flex-direction: column;
 	justify-content: space-between;
+	width: 80%;
 	min-height: 140px;
-	margin: 12px;
+	margin-bottom: 12px;
 	border-radius: 12px;
 	background-color: white;
 	box-shadow: 0 6px 10px -4px rgba(0, 0, 0, 0.49);

@@ -2,12 +2,12 @@ import styled from 'styled-components';
 
 const StyledSetupContainer = styled.section`
 	display: flex;
-	position: fixed;
-	bottom: 0;
+	position: relative;
 	flex-direction: column;
 	align-items: center;
 	justify-content: flex-end;
 	width: 100%;
+	min-height: 390px;
 	padding-bottom: 15px;
 	gap: 10px;
 	border-top-left-radius: 25px;

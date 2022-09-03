@@ -2,20 +2,20 @@ import styled, {css} from 'styled-components';
 
 const StyledDivBoxLeftRight = styled.div`
 	position: absolute;
-	top: -40px;
-	min-width: 200px;
-	height: 400px;
-	border-radius: 25px;
+	width: 80px;
+	height: 80px;
+	border-radius: 50%;
 	background-color: red;
 	${({variant}) =>
 		variant === 'left' &&
 		css`
-			left: -20px;
+			left: 10%;
 		`}
 	${({variant}) =>
 		variant === 'right' &&
 		css`
-			right: -20px;
+			top: -5%;
+			right: 10%;
 		`}
 `;
 
