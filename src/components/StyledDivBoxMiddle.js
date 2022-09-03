@@ -1,18 +1,47 @@
-import styled from 'styled-components';
+import styled, {css} from 'styled-components';
 
 const StyledDivBoxMiddle = styled.div`
 	display: flex;
 	position: absolute;
-	top: 0;
+	top: -32px;
 	left: 50%;
 	align-items: center;
 	justify-content: center;
-	width: 110px;
-	height: 110px;
+	width: 100px;
+	height: 100px;
 	transform: translate(-50%, -50%);
-	border-radius: 50%;
+	border-radius: 30px;
 	background-color: #79d6ff;
-	box-shadow: inset 0 -6px 10px -4px rgba(0, 0, 0, 0.49);
 `;
 
-export default StyledDivBoxMiddle;
+const StyledIndicator = styled.div`
+	${({variant}) =>
+		variant === 'befor' &&
+		css`
+			&::before {
+				content: '';
+				position: absolute;
+				top: 60px;
+				left: -998px;
+				min-width: 1000px;
+				height: 25px;
+				border-top-right-radius: 100px;
+				background: white;
+			}
+		`}
+	${({variant}) =>
+		variant === 'after' &&
+		css`
+			&::after {
+				content: '';
+				position: absolute;
+				top: 60px;
+				left: 98px;
+				width: 37.3vw;
+				height: 25px;
+				border-top-left-radius: 100px;
+				background: white;
+			}
+		`}
+`;
+export {StyledDivBoxMiddle, StyledIndicator};

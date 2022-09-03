@@ -7,7 +7,7 @@ import RepetitionCard from '../components/RepetitionCard';
 import SavedExerciseButton from '../components/SavedExerciseButton';
 import SetPauseCard from '../components/SetPauseCard';
 import SetsCard from '../components/SetsCard';
-import StyledDivBoxMiddle from '../components/StyledDivBoxMiddle';
+import {StyledDivBoxMiddle, StyledIndicator} from '../components/StyledDivBoxMiddle';
 import StyledLayout from '../components/StyledLayout';
 import StyledSetupContainer from '../components/StyledSetupContainer';
 
@@ -21,7 +21,9 @@ export default function HomePage() {
 			<SavedExerciseButton />
 			<StyledSetupContainer>
 				<StyledDivBoxMiddle>
+					<StyledIndicator variant="befor" />
 					<CountDownButton />
+					<StyledIndicator variant="after" />
 				</StyledDivBoxMiddle>
 				<ExerciseCard />
 				<RepetitionCard />
