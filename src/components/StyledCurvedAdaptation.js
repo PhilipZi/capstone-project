@@ -30,7 +30,7 @@ const StyledIndicator = styled.div`
 				content: '';
 				position: absolute;
 				top: 60px;
-				left: -998px;
+				left: -2000px;
 				min-width: 1000px;
 				height: 25px;
 				border-top-right-radius: 100px;
