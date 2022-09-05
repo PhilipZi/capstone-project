@@ -3,8 +3,7 @@ import {nanoid} from 'nanoid';
 import useSavedExercises from '../hooks/useSavedExercises';
 import useStore from '../hooks/useStore';
 
-import CancelIcon from './Icons/CancelIcon';
-import CheckMark from './Icons/CheckMark';
+import Icon from './Icons/Icon';
 import WhiteAdaptation from './Icons/WhiteAdaptation';
 import StyledButton from './StyledButtons';
 import StyledDivButtonsModal from './StyledDivButtonsModal';
@@ -37,10 +36,10 @@ export default function SaveModal({onCancel}) {
 				></StyledInput>
 				<StyledDivButtonsModal>
 					<StyledButton variant="modal" type="button" onClick={onCancel}>
-						<CancelIcon />
+						<Icon variant="cancel" size="32px" color="red" />
 					</StyledButton>
 					<StyledButton variant="modal" type="submit">
-						<CheckMark />
+						<Icon variant="checkMark" size="32px" color="green" />
 					</StyledButton>
 				</StyledDivButtonsModal>
 			</form>
