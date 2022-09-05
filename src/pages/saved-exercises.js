@@ -32,7 +32,6 @@ export default function SavedExercises() {
 					<Fragment key={savedExercise.id}>
 						<StyledSavedExerciseContainer>
 							<StyledButton
-								variant="useExercise"
 								onClick={() => {
 									loadSaveExercise(savedExercise);
 									Router.back();

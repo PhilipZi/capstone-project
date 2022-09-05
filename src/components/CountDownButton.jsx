@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 import useStore from '../hooks/useStore';
 
-import PlayIconMain from './Icons/PlayIconMain';
+import Icon from './Icons/Icon';
 import StyledButton from './StyledButtons';
 
 export default function CountDownButton() {
@@ -11,8 +11,8 @@ export default function CountDownButton() {
 	return (
 		<Link href="countdown">
 			<a>
-				<StyledButton variant="start" onClick={changeToFalse}>
-					<PlayIconMain />
+				<StyledButton variant="countdownButton" onClick={changeToFalse}>
+					<Icon variant="play" size="80px" color="black" />
 				</StyledButton>
 			</a>
 		</Link>

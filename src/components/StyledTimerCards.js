@@ -10,7 +10,7 @@ const StyledTimerCard = styled.div`
 	padding: 12px 10px;
 	border: none;
 	border-radius: 7px;
-	box-shadow: -4px 6px 8px 2px rgba(150, 228, 147, 0.42);
+	box-shadow: inset 0 0 9px 1px rgba(0, 0, 0, 0.95);
 	${({running}) =>
 		running &&
 		css`
@@ -29,7 +29,7 @@ const StyledTimerCard = styled.div`
 	${({variant}) =>
 		variant === 'Setpause' &&
 		css`
-			background: #fef15f;
+			background: #fff078;
 		`}
 	${({finish}) =>
 		finish &&

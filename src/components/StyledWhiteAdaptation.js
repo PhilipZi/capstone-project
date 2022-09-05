@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 const StyledWhiteAdaptation = styled.div`
 	position: absolute;
-	right: 60px;
+	right: 120px;
 	bottom: -30px;
 `;
 
