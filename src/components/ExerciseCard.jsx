@@ -4,7 +4,7 @@ import useStore from '../hooks/useStore';
 
 import PlayIcon from './Icons/PlayIcon';
 import StyledCard from './StyledCards';
-import StyledPCards from './StyledPCards';
+import StyledTextCards from './StyledTextCards';
 
 export default function ExerciseCard() {
 	const currentExercise = useStore(state => state.currentExercise);
@@ -13,7 +13,7 @@ export default function ExerciseCard() {
 		<Link href="/exercise-form">
 			<StyledCard variant="exercise">
 				<PlayIcon />
-				<StyledPCards>Exercise</StyledPCards>
+				<StyledTextCards>Exercise</StyledTextCards>
 				{currentExercise ? (
 					<a>
 						{currentExercise.exercise.minutes.toString().padStart(2, '0')}:

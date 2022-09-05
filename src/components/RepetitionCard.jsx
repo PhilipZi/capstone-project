@@ -4,7 +4,7 @@ import useStore from '../hooks/useStore';
 
 import RepetitionIcon from './Icons/RepetitionIcon';
 import StyledCard from './StyledCards';
-import StyledPCards from './StyledPCards';
+import StyledTextCards from './StyledTextCards';
 
 export default function RepetitionCard() {
 	const currentExercise = useStore(state => state.currentExercise);
@@ -13,7 +13,7 @@ export default function RepetitionCard() {
 		<Link href="/repetition-form">
 			<StyledCard variant="repetition">
 				<RepetitionIcon />
-				<StyledPCards>Repetition</StyledPCards>
+				<StyledTextCards>Repetition</StyledTextCards>
 				{currentExercise.repetition ? (
 					<a>{currentExercise.repetition.toString().padEnd(2, 'x')}</a>
 				) : (
