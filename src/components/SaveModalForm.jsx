@@ -6,7 +6,7 @@ import useStore from '../hooks/useStore';
 import Icon from './Icons/Icon';
 import WhiteAdaptation from './Icons/WhiteAdaptation';
 import StyledButton from './StyledButtons';
-import StyledDivButtonsModal from './StyledDivButtonsModal';
+import StyledButtonsModal from './StyledButtonsModal';
 import StyledInput from './StyledInput';
 import StyledModalSection from './StyledModalSection';
 import StyledWhiteAdaptation from './StyledWhiteAdaptation';
@@ -34,14 +34,14 @@ export default function SaveModal({onCancel}) {
 					name="name"
 					placeholder="Name your workout"
 				></StyledInput>
-				<StyledDivButtonsModal>
+				<StyledButtonsModal>
 					<StyledButton variant="modal" type="button" onClick={onCancel}>
 						<Icon variant="cancel" size="32px" color="red" />
 					</StyledButton>
 					<StyledButton variant="modal" type="submit">
 						<Icon variant="checkMark" size="32px" color="green" />
 					</StyledButton>
-				</StyledDivButtonsModal>
+				</StyledButtonsModal>
 			</form>
 			<StyledWhiteAdaptation>
 				<WhiteAdaptation />
