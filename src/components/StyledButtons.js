@@ -24,6 +24,28 @@ const StyledButton = styled.button`
 		css`
 			padding: 0;
 		`}
+	${({variant}) =>
+		variant === 'delete' &&
+		css`
+			position: absolute;
+			right: 17px;
+			bottom: 2px;
+			padding: 0;
+		`}
+		${({variant}) =>
+		variant === 'saved' &&
+		css`
+			position: absolute;
+			top: 40px;
+			left: 30px;
+			padding: 0;
+			background-color: transparent;
+		`}
+		${({variant}) =>
+		variant === 'start' &&
+		css`
+			padding-top: 10px;
+		`}
 `;
 
 export default StyledButton;

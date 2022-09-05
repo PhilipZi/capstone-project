@@ -8,6 +8,11 @@ const useStore = create(set => ({
 		sets: 1,
 		setPause: {minutes: 0, seconds: 0},
 	},
+	loadSaveExercise: savedExercises => {
+		set({
+			currentExercise: savedExercises,
+		});
+	},
 	setExercise: newExercise => {
 		set(state => {
 			return {

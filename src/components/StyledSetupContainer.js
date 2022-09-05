@@ -8,7 +8,7 @@ const StyledSetupContainer = styled.section`
 	align-items: center;
 	justify-content: flex-end;
 	width: 100%;
-	padding-bottom: 30px;
+	padding-bottom: 15px;
 	gap: 10px;
 	border-top-left-radius: 25px;
 	border-top-right-radius: 25px;

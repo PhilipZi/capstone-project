@@ -7,7 +7,6 @@ const StyledHeader = styled.header`
 	${({variant}) =>
 		variant === 'counter' &&
 		css`
-			color: #8f5ffe;
 			position: fixed;
 			z-index: 2;
 			top: 0;
