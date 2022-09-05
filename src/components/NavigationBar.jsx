@@ -2,8 +2,7 @@ import {useState} from 'react';
 
 import useStore from '../hooks/useStore';
 
-import PauseIconTimer from './Icons/PauseIconTimer';
-import PlayIconNavbar from './Icons/PlayIconNavbar';
+import Icon from './Icons/Icon';
 import SaveIcon from './Icons/SaveIcon';
 import SaveModalForm from './SaveModalForm';
 import StyledButton from './StyledButtons';
@@ -28,11 +27,11 @@ export default function NavigationBar() {
 			{isShown && <SaveModalForm onCancel={handleVisibility} />}
 			{!timerOn ? (
 				<StyledButton variant="play" onClick={changeToTrue}>
-					<PlayIconNavbar />
+					<Icon variant="play" size="55" />
 				</StyledButton>
 			) : (
 				<StyledButton variant="play" onClick={changeToFalse}>
-					<PauseIconTimer />
+					<Icon variant="pauseIconMain" size="55" />
 				</StyledButton>
 			)}
 		</StyledNavigationBar>
