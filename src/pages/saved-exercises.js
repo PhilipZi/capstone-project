@@ -2,7 +2,7 @@ import dynamic from 'next/dynamic';
 import Router from 'next/router';
 import {Fragment} from 'react';
 
-import DeleteIcon from '../components/Icons/DeleteIcon';
+import Icon from '../components/Icons/Icon';
 import MoveBackButtonButton from '../components/MoveBackButton';
 import SavedTimerCard from '../components/SavedTimerCards';
 import StyledButton from '../components/StyledButtons';
@@ -56,7 +56,7 @@ export default function SavedExercises() {
 									deleteExcercise(savedExercise.id);
 								}}
 							>
-								<DeleteIcon />
+								<Icon variant="delete" color="grey" size="30px" />
 							</StyledButton>
 						</StyledSavedExerciseContainer>
 					</Fragment>

@@ -20,11 +20,22 @@ export default function HomePage() {
 			</Head>
 			<SavedExerciseButton />
 			<StyledSetupContainer>
-				<StyledDivBoxMiddle>
-					<StyledIndicator variant="before" />
-					<CountDownButton />
-					<StyledIndicator variant="after" />
-				</StyledDivBoxMiddle>
+				<div
+					style={{
+						overflow: 'hidden',
+						width: '100vw',
+						height: '100px',
+						position: 'relative',
+						background: '#79d6ff',
+					}}
+				>
+					<StyledIndicator variant="whiteline" />
+					<StyledDivBoxMiddle>
+						<StyledIndicator variant="before" />
+						<CountDownButton />
+						<StyledIndicator variant="after" />
+					</StyledDivBoxMiddle>
+				</div>
 				<ExerciseCard />
 				<RepetitionCard />
 				<PauseCard />

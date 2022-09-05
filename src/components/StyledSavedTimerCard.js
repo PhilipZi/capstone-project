@@ -11,8 +11,9 @@ const StyledLi = styled.li`
 
 const StyledUl = styled.ul`
 	display: flex;
+	justify-content: space-between;
 	width: 100%;
-	padding: 32px 8px 3px 8px;
+	padding: 32px 5px 3px 8px;
 	border-top: solid grey;
 	border-width: 1.5px;
 `;
@@ -24,7 +25,7 @@ const StyledSpan = styled.span`
 const StyledA = styled.a`
 	display: flex;
 	align-items: flex-start;
-	color: red;
+	color: #e36d49;
 `;
 const StyledSavedTimerCardDiv = styled.div`
 	display: flex;

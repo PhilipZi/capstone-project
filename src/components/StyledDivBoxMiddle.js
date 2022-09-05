@@ -3,7 +3,7 @@ import styled, {css} from 'styled-components';
 const StyledDivBoxMiddle = styled.div`
 	display: flex;
 	position: absolute;
-	top: -32px;
+	top: 50px;
 	left: 50%;
 	align-items: center;
 	justify-content: center;
@@ -37,9 +37,21 @@ const StyledIndicator = styled.div`
 				position: absolute;
 				top: 60px;
 				left: 98px;
-				width: 37.3vw;
+				width: 100vw;
 				height: 25px;
 				border-top-left-radius: 100px;
+				background: white;
+			}
+		`}
+		${({variant}) =>
+		variant === 'whiteline' &&
+		css`
+			&::after {
+				content: '';
+				position: absolute;
+				top: 80px;
+				width: 100vw;
+				height: 25px;
 				background: white;
 			}
 		`}

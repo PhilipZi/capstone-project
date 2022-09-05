@@ -29,8 +29,9 @@ const StyledButton = styled.button`
 		css`
 			position: absolute;
 			right: 8px;
-			bottom: 0;
+			top: 8px;
 			padding: 0;
+			fill: grey;
 		`}
 		${({variant}) =>
 		variant === 'saved' &&

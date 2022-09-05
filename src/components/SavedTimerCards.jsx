@@ -23,7 +23,7 @@ export default function SavedTimerCard({
 			{name ? (
 				<StyledH2 variant="saved"> {name}</StyledH2>
 			) : (
-				<StyledH2 variant="saved">No name declared</StyledH2>
+				<StyledH2 variant="saved">Not described</StyledH2>
 			)}
 			<StyledUl>
 				<StyledLi variant="exercise">
