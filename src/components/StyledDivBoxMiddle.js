@@ -16,7 +16,7 @@ const StyledDivBoxMiddle = styled.div`
 
 const StyledIndicator = styled.div`
 	${({variant}) =>
-		variant === 'befor' &&
+		variant === 'before' &&
 		css`
 			&::before {
 				content: '';

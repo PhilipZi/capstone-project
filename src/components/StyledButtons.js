@@ -29,7 +29,7 @@ const StyledButton = styled.button`
 		css`
 			position: absolute;
 			right: 8px;
-			bottom: -2px;
+			bottom: 0;
 			padding: 0;
 		`}
 		${({variant}) =>

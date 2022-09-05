@@ -31,6 +31,11 @@ const StyledH2 = styled.h2`
 	align-items: center;
 	margin: 5px 0 10px 10px;
 	font-weight: lighter;
+	${({variant}) =>
+		variant === 'saved' &&
+		css`
+			margin: 10px 0 0 10px;
+		`}
 `;
 
 export {StyledHeader, StyledH1, StyledH2};

@@ -5,14 +5,14 @@ const StyledLi = styled.li`
 	flex-direction: column;
 	justify-content: space-between;
 	max-width: 200px;
-	padding-right: 5px;
+	padding-right: 10px;
 	list-style: none;
 `;
 
 const StyledUl = styled.ul`
 	display: flex;
 	width: 100%;
-	padding-left: 4%;
+	padding: 32px 8px 3px 8px;
 	border-top: solid grey;
 	border-width: 1.5px;
 `;
@@ -26,11 +26,11 @@ const StyledA = styled.a`
 	align-items: flex-start;
 	color: red;
 `;
-const StyledDiv = styled.div`
+const StyledSavedTimerCardDiv = styled.div`
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
 	justify-content: space-between;
 `;
 
-export {StyledLi, StyledUl, StyledSpan, StyledA, StyledDiv};
+export {StyledLi, StyledUl, StyledSpan, StyledA, StyledSavedTimerCardDiv};

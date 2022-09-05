@@ -1,5 +1,11 @@
 import {StyledH2} from './StyledHeader';
-import {StyledLi, StyledUl, StyledSpan, StyledA, StyledDiv} from './StyledUlLi';
+import {
+	StyledLi,
+	StyledUl,
+	StyledSpan,
+	StyledA,
+	StyledSavedTimerCardDiv,
+} from './StyledSavedTimerCard';
 
 export default function SavedTimerCard({
 	name,
@@ -13,8 +19,12 @@ export default function SavedTimerCard({
 	setPauseSeconds,
 }) {
 	return (
-		<StyledDiv>
-			<StyledH2>{name}</StyledH2>
+		<StyledSavedTimerCardDiv>
+			{name ? (
+				<StyledH2 variant="saved"> {name}</StyledH2>
+			) : (
+				<StyledH2 variant="saved">No name declared</StyledH2>
+			)}
 			<StyledUl>
 				<StyledLi variant="exercise">
 					<StyledSpan>Exercise </StyledSpan>
@@ -45,6 +55,6 @@ export default function SavedTimerCard({
 					</StyledA>
 				</StyledLi>
 			</StyledUl>
-		</StyledDiv>
+		</StyledSavedTimerCardDiv>
 	);
 }

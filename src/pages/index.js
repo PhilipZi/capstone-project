@@ -21,7 +21,7 @@ export default function HomePage() {
 			<SavedExerciseButton />
 			<StyledSetupContainer>
 				<StyledDivBoxMiddle>
-					<StyledIndicator variant="befor" />
+					<StyledIndicator variant="before" />
 					<CountDownButton />
 					<StyledIndicator variant="after" />
 				</StyledDivBoxMiddle>
