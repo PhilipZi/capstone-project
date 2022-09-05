@@ -7,7 +7,11 @@ import RepetitionCard from '../components/RepetitionCard';
 import SavedExerciseButton from '../components/SavedExerciseButton';
 import SetPauseCard from '../components/SetPauseCard';
 import SetsCard from '../components/SetsCard';
-import {StyledDivBoxMiddle, StyledIndicator} from '../components/StyledDivBoxMiddle';
+import {
+	StyledCurvedAdaptation,
+	StyledBoxCountdownButton,
+	StyledIndicator,
+} from '../components/StyledCurvedAdaptation';
 import StyledLayout from '../components/StyledLayout';
 import StyledSetupContainer from '../components/StyledSetupContainer';
 
@@ -20,22 +24,14 @@ export default function HomePage() {
 			</Head>
 			<SavedExerciseButton />
 			<StyledSetupContainer>
-				<div
-					style={{
-						overflow: 'hidden',
-						width: '100vw',
-						height: '100px',
-						position: 'relative',
-						background: '#79d6ff',
-					}}
-				>
+				<StyledCurvedAdaptation>
 					<StyledIndicator variant="whiteline" />
-					<StyledDivBoxMiddle>
+					<StyledBoxCountdownButton>
 						<StyledIndicator variant="before" />
 						<CountDownButton />
 						<StyledIndicator variant="after" />
-					</StyledDivBoxMiddle>
-				</div>
+					</StyledBoxCountdownButton>
+				</StyledCurvedAdaptation>
 				<ExerciseCard />
 				<RepetitionCard />
 				<PauseCard />

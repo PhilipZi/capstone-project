@@ -1,6 +1,14 @@
 import styled, {css} from 'styled-components';
 
-const StyledDivBoxMiddle = styled.div`
+const StyledCurvedAdaptation = styled.div`
+	position: relative;
+	width: 100vw;
+	height: 100px;
+	overflow: hidden;
+	background-color: #79d6ff;
+`;
+
+const StyledBoxCountdownButton = styled.div`
 	display: flex;
 	position: absolute;
 	top: 50px;
@@ -56,4 +64,4 @@ const StyledIndicator = styled.div`
 			}
 		`}
 `;
-export {StyledDivBoxMiddle, StyledIndicator};
+export {StyledBoxCountdownButton, StyledIndicator, StyledCurvedAdaptation};
