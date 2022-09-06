@@ -8,10 +8,7 @@ const StyledTimerCard = styled.div`
 	height: 100px;
 	padding: 12px 10px;
 	gap: 10px;
-	border-radius: 16px;
-	outline: 1px solid black;
-	outline-offset: -1px;
-	box-shadow: inset 0 0 9px 1px rgba(0, 0, 0, 0.95);
+	box-shadow: inset 0 0 4px 0 rgba(0, 0, 0, 0.35);
 	${({variant}) =>
 		variant === 'Exercise' &&
 		css`
@@ -34,6 +31,27 @@ const StyledTimerCard = styled.div`
 			opacity: 0;
 			max-height: 0;
 			padding: 0;
+		`}
+		${({running}) =>
+		running &&
+		css`
+			/* box-shadow: inset 0px 0px 10px 4px rgba(0, 0, 0, 0.59); */
+
+			${({variant}) =>
+				variant === 'Exercise' &&
+				css`
+					background: #69e465;
+				`}
+			${({variant}) =>
+				variant === 'Setpause' &&
+				css`
+					background: #ffeb4b;
+				`}
+				${({variant}) =>
+				variant === 'Pause' &&
+				css`
+					background: #ff4b4b;
+				`}
 		`}
 `;
 export default StyledTimerCard;
