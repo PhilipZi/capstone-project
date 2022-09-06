@@ -55,6 +55,19 @@ const StyledButton = styled.button`
 		css`
 			border-radius: 8px;
 		`}
+		${({variant}) =>
+		variant === 'play' &&
+		css`
+			width: 70px;
+			box-shadow: inset 0px 1px 8px 2px rgba(0, 0, 0, 0.49);
+
+			border-radius: 16%;
+		`}
+		${({variant}) =>
+		variant === 'notplay' &&
+		css`
+			width: 70px;
+		`}
 `;
 
 export default StyledButton;

@@ -17,7 +17,7 @@ const StyledTimerCard = styled.div`
 	${({variant}) =>
 		variant === 'Pause' &&
 		css`
-			background: #f57171;
+			background: #f58b8b;
 		`}
 	${({variant}) =>
 		variant === 'Setpause' &&
@@ -48,7 +48,7 @@ const StyledTimerCard = styled.div`
 				${({variant}) =>
 				variant === 'Pause' &&
 				css`
-					background: #ff4b4b;
+					background: #ff6464;
 				`}
 		`}
 `;
