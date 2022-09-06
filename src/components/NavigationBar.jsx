@@ -22,7 +22,7 @@ export default function NavigationBar() {
 	return (
 		<StyledNavigationBar>
 			{isShown ? (
-				<StyledButton variant="play" type="button" color="" onClick={handleVisibility}>
+				<StyledButton variant="play" type="button" onClick={handleVisibility}>
 					<SaveIcon></SaveIcon>
 				</StyledButton>
 			) : (
@@ -33,11 +33,11 @@ export default function NavigationBar() {
 			{isShown && <SaveModalForm onCancel={handleVisibility} />}
 			{!timerOn ? (
 				<StyledButton variant="notplay" onClick={changeToTrue}>
-					<Icon variant="play" size="55px" color="" />
+					<Icon variant="play" size="55px" color="#424040" />
 				</StyledButton>
 			) : (
 				<StyledButton variant="play" onClick={changeToFalse}>
-					<Icon variant="pauseIconMain" size="55px" color="" />
+					<Icon variant="pauseIconMain" size="55px" color="#424040" />
 				</StyledButton>
 			)}
 		</StyledNavigationBar>
