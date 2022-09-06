@@ -4,18 +4,14 @@ const StyledTimerCard = styled.div`
 	display: flex;
 	position: relative;
 	align-items: center;
-	justify-content: space-between;
 	min-width: 260px;
 	height: 100px;
 	padding: 12px 10px;
-	border: none;
-	border-radius: 7px;
+	gap: 10px;
+	border-radius: 16px;
+	outline: 1px solid black;
+	outline-offset: -1px;
 	box-shadow: inset 0 0 9px 1px rgba(0, 0, 0, 0.95);
-	${({running}) =>
-		running &&
-		css`
-			border: 6px solid red;
-		`}
 	${({variant}) =>
 		variant === 'Exercise' &&
 		css`
