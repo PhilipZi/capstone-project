@@ -67,6 +67,7 @@ export const GlobalStyle = createGlobalStyle`
 		margin: 0;
 		font-family:'Roboto',sans-serif;
 		font-size: 1rem;
+		overscroll-behavior: none;
 	}
 	main{
 		min-height: 100%;
