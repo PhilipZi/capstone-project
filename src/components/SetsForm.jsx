@@ -13,8 +13,9 @@ import {StyledHeader, StyledH1} from './StyledHeader';
 import StyledInput from './StyledInput';
 import SubmitButton from './SubmitButton';
 export default function SetsForm() {
+	const currentExercise = useStore(state => state.currentExercise);
 	const router = useRouter();
-	const [setsCounter, setSetsCounter] = useState(1);
+	const [setsCounter, setSetsCounter] = useState(currentExercise.sets);
 
 	function decrementRepetition() {
 		setSetsCounter(setsCounter - 1);

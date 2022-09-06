@@ -12,9 +12,10 @@ import SubmitButton from './SubmitButton';
 import Timer from './Timer';
 
 export default function PauseForm() {
+	const currentExercise = useStore(state => state.currentExercise);
 	const router = useRouter();
-	const [minutes, setMinutes] = useState(0);
-	const [seconds, setSeconds] = useState(0);
+	const [minutes, setMinutes] = useState(currentExercise.pause.minutes);
+	const [seconds, setSeconds] = useState(currentExercise.pause.seconds);
 
 	function handleMinutes(event) {
 		setMinutes(Number(event.target.value));
