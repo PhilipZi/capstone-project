@@ -6,7 +6,7 @@ const StyledTimerCard = styled.div`
 	align-items: center;
 	justify-content: space-between;
 	min-width: 260px;
-	height: 54px;
+	height: 100px;
 	padding: 12px 10px;
 	border: none;
 	border-radius: 7px;

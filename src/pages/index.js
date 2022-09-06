@@ -20,10 +20,10 @@ export default function HomePage() {
 	return (
 		<StyledLayout variant="setup">
 			<Head>
-				<title key="title">TIM-O</title>
+				<title key="title">tim-o</title>
 				<meta key="description" name="description" content="This is my project" />
 			</Head>
-			<StyledNameApp>TIM-O</StyledNameApp>
+			<StyledNameApp>Tim-o</StyledNameApp>
 			<SavedExerciseButton />
 			<StyledSetupContainer>
 				<StyledCurvedAdaptation>
