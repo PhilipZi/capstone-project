@@ -35,8 +35,6 @@ const StyledTimerCard = styled.div`
 		${({running}) =>
 		running &&
 		css`
-			/* box-shadow: inset 0px 0px 10px 4px rgba(0, 0, 0, 0.59); */
-
 			${({variant}) =>
 				variant === 'Exercise' &&
 				css`
