@@ -13,15 +13,17 @@ import {
 	StyledIndicator,
 } from '../components/StyledCurvedAdaptation';
 import StyledLayout from '../components/StyledLayout';
+import StyledNameApp from '../components/StyledNameApp';
 import StyledSetupContainer from '../components/StyledSetupContainer';
 
 export default function HomePage() {
 	return (
 		<StyledLayout variant="setup">
 			<Head>
-				<title key="title">Timekeeper</title>
+				<title key="title">TIM-O</title>
 				<meta key="description" name="description" content="This is my project" />
 			</Head>
+			<StyledNameApp>TIM-O</StyledNameApp>
 			<SavedExerciseButton />
 			<StyledSetupContainer>
 				<StyledCurvedAdaptation>

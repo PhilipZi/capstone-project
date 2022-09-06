@@ -39,6 +39,19 @@ export const GlobalStyle = createGlobalStyle`
        url('/fonts/roboto-v30-latin-500.ttf') format('truetype'), /* Safari, Android, iOS */
        url('/fonts/roboto-v30-latin-500.svg#Roboto') format('svg'); /* Legacy iOS */
 }
+
+@font-face {
+  font-family: 'Bungee Shade';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/bungee-shade-v11-latin-regular.eot'); /* IE9 Compat Modes */
+  src: local(''),
+       url('../fonts/bungee-shade-v11-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/bungee-shade-v11-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../fonts/bungee-shade-v11-latin-regular.woff') format('woff'), /* Modern Browsers */
+       url('../fonts/bungee-shade-v11-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/bungee-shade-v11-latin-regular.svg#BungeeShade') format('svg'); /* Legacy iOS */
+}
 	*,
 	*::before,
 	*::after {

@@ -6,7 +6,57 @@ const StyledInput = styled.input`
 		css`
 			transform: rotate(-90deg);
 			cursor: pointer;
-		`}
+			width: 170px;
+			background-color: transparent;
+
+    -webkit-appearance: none;
+}
+::-webkit-slider-runnable-track {
+
+	height: 6.5px;
+    background: white;
+	border-radius: 25px;
+    border: solid black 1.8px;
+}
+::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    border: white 2px solid;
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    background: grey;
+    margin-top: -6px;
+}
+:focus {
+    outline: none;
+}
+:focus::-webkit-slider-runnable-track {
+    background: white;
+}
+::-moz-range-track {
+	width: 180px;
+	height: 6.5px;
+    background: white;
+	border-radius: 25px;
+    border: solid black 1.8px;
+}
+::-moz-range-thumb {
+    border: white 2px solid;
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    background: grey;
+    margin-top: -6px;
+}
+:-moz-focusring{
+    outline: 1px solid white;
+    outline-offset: -1px;
+}
+:focus::-moz-range-track {
+    background: white;
+
+
+	`}
 
 	${({variant}) =>
 		variant === 'counter' &&
