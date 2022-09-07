@@ -52,5 +52,4 @@ const useStore = create(set => ({
 	changeToTrue: () => set(state => ({timerOn: (state.timerOn = true)})),
 	changeToFalse: () => set(state => ({timerOn: (state.timerOn = false)})),
 }));
-
 export default useStore;

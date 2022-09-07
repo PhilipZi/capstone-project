@@ -7,19 +7,33 @@ import RepetitionCard from '../components/RepetitionCard';
 import SavedExerciseButton from '../components/SavedExerciseButton';
 import SetPauseCard from '../components/SetPauseCard';
 import SetsCard from '../components/SetsCard';
+import {
+	StyledCurvedAdaptation,
+	StyledBoxCountdownButton,
+	StyledIndicator,
+} from '../components/StyledCurvedAdaptation';
 import StyledLayout from '../components/StyledLayout';
+import StyledNameApp from '../components/StyledNameApp';
 import StyledSetupContainer from '../components/StyledSetupContainer';
 
 export default function HomePage() {
 	return (
-		<StyledLayout>
+		<StyledLayout variant="setup">
 			<Head>
-				<title key="title">Timekeeper</title>
+				<title key="title">tim-o</title>
 				<meta key="description" name="description" content="This is my project" />
 			</Head>
+			<StyledNameApp>Tim-o</StyledNameApp>
 			<SavedExerciseButton />
 			<StyledSetupContainer>
-				<CountDownButton />
+				<StyledCurvedAdaptation>
+					<StyledIndicator variant="whiteline" />
+					<StyledBoxCountdownButton>
+						<StyledIndicator variant="before" />
+						<CountDownButton />
+						<StyledIndicator variant="after" />
+					</StyledBoxCountdownButton>
+				</StyledCurvedAdaptation>
 				<ExerciseCard />
 				<RepetitionCard />
 				<PauseCard />

@@ -3,7 +3,10 @@ import {nanoid} from 'nanoid';
 import useSavedExercises from '../hooks/useSavedExercises';
 import useStore from '../hooks/useStore';
 
+import Icon from './Icons/Icon';
 import WhiteAdaptation from './Icons/WhiteAdaptation';
+import StyledButton from './StyledButtons';
+import StyledButtonsModal from './StyledButtonsModal';
 import StyledInput from './StyledInput';
 import StyledModalSection from './StyledModalSection';
 import StyledWhiteAdaptation from './StyledWhiteAdaptation';
@@ -22,7 +25,7 @@ export default function SaveModal({onCancel}) {
 	return (
 		<StyledModalSection>
 			<form onSubmit={handleSave}>
-				<h2>Save this workout</h2>
+				<h2>Save this workout?</h2>
 				<label htmlFor="savename"></label>
 				<StyledInput
 					variant="savename"
@@ -31,11 +34,14 @@ export default function SaveModal({onCancel}) {
 					name="name"
 					placeholder="Name your workout"
 				></StyledInput>
-
-				<button type="submit">SAVE</button>
-				<button type="button" onClick={onCancel}>
-					CANCEL
-				</button>
+				<StyledButtonsModal>
+					<StyledButton variant="modal" type="button" onClick={onCancel}>
+						<Icon variant="cancel" size="32px" color="red" />
+					</StyledButton>
+					<StyledButton variant="modal" type="submit">
+						<Icon variant="checkMark" size="32px" color="green" />
+					</StyledButton>
+				</StyledButtonsModal>
 			</form>
 			<StyledWhiteAdaptation>
 				<WhiteAdaptation />

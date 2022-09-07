@@ -1,11 +1,11 @@
 import styled from 'styled-components';
 
-const StyledSpan = styled.span`
+const StyledTimerSpan = styled.span`
 	position: absolute;
 	top: 50%;
-	left: 60%;
+	right: -20px;
 	transform: translate(-50%, -50%);
-	font-size: 25px;
+	font-size: 3rem;
 `;
 
-export default StyledSpan;
+export default StyledTimerSpan;

@@ -1,7 +1,5 @@
 import {useMemo, useState} from 'react';
 
-import DumbbellIcon from '../components/Icons/DumbbellIcon';
-import StyledDumbbellIcon from '../components/Icons/StyledDumbbellIcon';
 import MoveBackButton from '../components/MoveBackButton';
 import NavigationBar from '../components/NavigationBar';
 import {StyledHeader, StyledH1} from '../components/StyledHeader';
@@ -13,6 +11,7 @@ import useStore from '../hooks/useStore';
 export default function TimerContainer() {
 	const [currentIndex, setCurrentIndex] = useState(0);
 	const currentExercise = useStore(state => state.currentExercise);
+	const changeToFalse = useStore(state => state.changeToFalse);
 
 	const timers = useMemo(() => {
 		const _sets = [];
@@ -25,6 +24,8 @@ export default function TimerContainer() {
 				});
 				if (
 					repition < currentExercise.repetition - 1 &&
+					(currentExercise.exercise.minutes > 0 ||
+						currentExercise.exercise.seconds > 0) &&
 					(currentExercise.pause.minutes > 0 || currentExercise.pause.seconds > 0)
 				) {
 					_sets.push({
@@ -36,6 +37,7 @@ export default function TimerContainer() {
 			}
 			if (
 				sets < currentExercise.sets - 1 &&
+				(currentExercise.exercise.minutes > 0 || currentExercise.exercise.seconds > 0) &&
 				(currentExercise.setPause.minutes > 0 || currentExercise.setPause.seconds > 0)
 			) {
 				_sets.push({
@@ -61,15 +63,7 @@ export default function TimerContainer() {
 		<StyledLayout>
 			<StyledHeader variant="counter">
 				<MoveBackButton />
-				<StyledH1>
-					<StyledDumbbellIcon>
-						<DumbbellIcon />
-					</StyledDumbbellIcon>
-					Your Workout
-					<StyledDumbbellIcon variant="rotated">
-						<DumbbellIcon />
-					</StyledDumbbellIcon>
-				</StyledH1>
+				<StyledH1>Your Workout</StyledH1>
 			</StyledHeader>
 
 			<StyledTimerCardsContainer>
@@ -81,7 +75,12 @@ export default function TimerContainer() {
 						seconds={timer.seconds}
 						running={currentIndex === idx}
 						onFinish={() => {
-							setCurrentIndex(currentIndex + 1);
+							{
+								if (currentIndex + 2 === timers.length) {
+									changeToFalse;
+								}
+								setCurrentIndex(currentIndex + 1);
+							}
 						}}
 					/>
 				))}

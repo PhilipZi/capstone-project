@@ -12,9 +12,10 @@ import SubmitButton from './SubmitButton';
 import Timer from './Timer';
 
 export default function ExerciseForm() {
+	const currentExercise = useStore(state => state.currentExercise);
 	const router = useRouter();
-	const [minutes, setMinutes] = useState(0);
-	const [seconds, setSeconds] = useState(0);
+	const [minutes, setMinutes] = useState(currentExercise.exercise.minutes);
+	const [seconds, setSeconds] = useState(currentExercise.exercise.seconds);
 
 	function handleMinutes(event) {
 		setMinutes(Number(event.target.value));

@@ -14,8 +14,10 @@ import StyledInput from './StyledInput';
 import SubmitButton from './SubmitButton';
 
 export default function RepetitionForm() {
+	const currentExercise = useStore(state => state.currentExercise);
+
 	const router = useRouter();
-	const [repetitionCounter, setRepetitionCounter] = useState(1);
+	const [repetitionCounter, setRepetitionCounter] = useState(currentExercise.repetition);
 	function decrementRepetition() {
 		setRepetitionCounter(repetitionCounter - 1);
 	}

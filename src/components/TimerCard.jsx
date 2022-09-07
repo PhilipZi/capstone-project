@@ -7,7 +7,7 @@ import PauseIcon from './Icons/PauseIcon';
 import PlayIcon from './Icons/PlayIcon';
 import SetPauseIcon from './Icons/SetPauseIcon';
 import StyledTimerCard from './StyledTimerCards';
-import StyledSpan from './StyledTimerSpan';
+import StyledTimerSpan from './StyledTimerSpan';
 
 export default function TimerCard({variant, minutes, seconds, running, onFinish}) {
 	const [_minutes, setMinutes] = useState(minutes);
@@ -20,6 +20,7 @@ export default function TimerCard({variant, minutes, seconds, running, onFinish}
 		if (!running) return;
 		const timer = setInterval(() => {
 			if (timerOn) {
+				if (_minutes === 0 && _seconds === 0) return;
 				if (_minutes === 0 && _seconds === 1) {
 					beep();
 					onFinish();
@@ -43,21 +44,20 @@ export default function TimerCard({variant, minutes, seconds, running, onFinish}
 			finish={_minutes === 0 && _seconds === 0}
 			running={running}
 		>
-			{' '}
-			<p>{variant}</p>
-			{_minutes > 0 || _seconds > 0 ? (
-				<StyledSpan>
-					{_minutes.toString().padStart(2, '0')}:{_seconds.toString().padStart(2, '0')}
-				</StyledSpan>
-			) : (
-				'00:00'
-			)}
 			{variant === 'Exercise' ? (
 				<PlayIcon />
 			) : variant === 'Pause' ? (
 				<PauseIcon />
 			) : (
 				<SetPauseIcon />
+			)}
+			<p>{variant}</p>
+			{_minutes > 0 || _seconds > 0 ? (
+				<StyledTimerSpan running={running}>
+					{_minutes.toString().padStart(2, '0')}:{_seconds.toString().padStart(2, '0')}
+				</StyledTimerSpan>
+			) : (
+				'00:00'
 			)}
 		</StyledTimerCard>
 	);
