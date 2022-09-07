@@ -10,7 +10,6 @@ You can save favourite configurations and name them, so you won't forget them an
 
 <!-- tocstop -->
 
-It uses the following tools/libraries:
 
 ## Tech-Stack
 
