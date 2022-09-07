@@ -1,4 +1,4 @@
-# Tim-o
+# Capstone Project: Tim-o
 	
 ## Description
 
