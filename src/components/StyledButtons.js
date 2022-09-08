@@ -68,6 +68,7 @@ const StyledButton = styled.button`
 		variant === 'notplay' &&
 		css`
 			width: 70px;
+			padding: 0;
 		`}
 `;
 
