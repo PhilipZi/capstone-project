@@ -30,6 +30,7 @@ const StyledH2 = styled.h2`
 	display: flex;
 	align-items: center;
 	margin: 5px 0 10px 10px;
+	color: black;
 	font-weight: lighter;
 	${({variant}) =>
 		variant === 'saved' &&
