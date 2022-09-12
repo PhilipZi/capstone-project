@@ -2,9 +2,8 @@ import styled from 'styled-components';
 
 const StyledNameApp = styled.h1`
 	font-family: 'Bungee Shade', sans-serif;
-	font-size: 3rem;
 	color: white;
-
+	font-size: 3rem;
 	text-align: center;
 	&::before {
 		content: '';
