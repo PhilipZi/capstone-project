@@ -1,10 +1,10 @@
-import CheckMark from './Icons/CheckMark';
+import CheckMarkIcon from './Icons/CheckMarkIcon';
 import StyledButton from './StyledButtons';
 
 export default function SubmitButton() {
 	return (
 		<StyledButton type="submit" variant="submit">
-			<CheckMark />
+			<CheckMarkIcon />
 		</StyledButton>
 	);
 }

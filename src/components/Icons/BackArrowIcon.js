@@ -1,4 +1,4 @@
-const BackArrow = () => {
+const BackArrowIcon = () => {
 	return (
 		<svg
 			width="30"
@@ -18,4 +18,4 @@ const BackArrow = () => {
 	);
 };
 
-export default BackArrow;
+export default BackArrowIcon;
