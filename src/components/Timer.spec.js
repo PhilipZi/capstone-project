@@ -11,7 +11,7 @@ const StyledH2 = styled.h2`
 
 describe('Timer component', () => {
 	it('should render children', () => {
-		const text = 'Set Pause';
+		const text = '0:0';
 		render(<StyledH2>{text}</StyledH2>);
 		const timer = screen.getByText(text);
 		expect(timer).toBeInTheDocument();
