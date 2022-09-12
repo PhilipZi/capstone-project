@@ -63,6 +63,8 @@ const StyledInput = styled.input`
 		css`
 			border: none;
 			background-color: transparent;
+			padding-right: 1px;
+			padding-left: 1px;
 			font-size: 80px;
 			width: 130px;
 			text-align: center;

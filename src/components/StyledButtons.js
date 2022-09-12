@@ -60,6 +60,7 @@ const StyledButton = styled.button`
 		css`
 			width: 70px;
 			box-shadow: inset 0px 1px 8px 2px rgba(0, 0, 0, 0.49);
+			padding: 0;
 
 			border-radius: 16%;
 		`}
@@ -67,6 +68,7 @@ const StyledButton = styled.button`
 		variant === 'notplay' &&
 		css`
 			width: 70px;
+			padding: 0;
 		`}
 `;
 

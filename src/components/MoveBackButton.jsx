@@ -1,6 +1,6 @@
 import {useRouter} from 'next/router';
 
-import BackArrow from './Icons/BackArrow';
+import BackArrowIcon from './Icons/BackArrowIcon';
 import StyledButton from './StyledButtons';
 
 export default function MoveBackButton() {
@@ -12,7 +12,7 @@ export default function MoveBackButton() {
 			}}
 			variant="goback"
 		>
-			<BackArrow />
+			<BackArrowIcon />
 		</StyledButton>
 	);
 }

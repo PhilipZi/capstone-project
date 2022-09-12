@@ -1,4 +1,4 @@
-const CheckMark = () => {
+const CheckMarkIcon = () => {
 	return (
 		<svg
 			width="32"
@@ -25,4 +25,4 @@ const CheckMark = () => {
 	);
 };
 
-export default CheckMark;
+export default CheckMarkIcon;
