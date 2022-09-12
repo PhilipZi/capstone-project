@@ -9,6 +9,14 @@ import useStore from '../hooks/useStore';
 
 import CountDownButton from './CountDownButton';
 
+jest.mock('next/router', () => ({
+	useRouter() {
+		return {
+			push: jest.fn(),
+		};
+	},
+}));
+
 describe('CountDownButton component', () => {
 	it('should render children', () => {
 		render(<CountDownButton />);
@@ -16,7 +24,7 @@ describe('CountDownButton component', () => {
 		expect(countDownButton).toBeInTheDocument();
 	});
 
-	it.skip('should allow clicks', async () => {
+	it('should allow clicks', async () => {
 		const store = renderHook(() => useStore());
 		const {changeToFalse} = store.result.current;
 		render(<CountDownButton />);
