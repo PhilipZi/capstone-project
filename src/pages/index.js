@@ -20,6 +20,7 @@ export default function HomePage() {
 	return (
 		<StyledLayout variant="setup">
 			<Head>
+				<link rel="icon" href="/tim-o.png" />
 				<title key="title">tim-o</title>
 				<meta key="description" name="description" content="This is my project" />
 			</Head>
